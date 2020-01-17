@@ -8,7 +8,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.IOException;
 
@@ -20,7 +19,7 @@ public class MainScreenController {
      */
     public void toAddPartScreen(ActionEvent event) throws IOException {
         //
-        Parent addPartParent = FXMLLoader.load(getClass().getResource("addPart.fxml"));
+        Parent addPartParent = FXMLLoader.load(getClass().getResource("AddPart.fxml"));
         Scene addPartScene = new Scene(addPartParent);
 
         //Get Stage info
