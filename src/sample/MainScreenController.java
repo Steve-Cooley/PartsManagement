@@ -29,4 +29,16 @@ public class MainScreenController {
         window.show();
     }
 
+    public void toModifyPartScreen(ActionEvent event) throws IOException {
+        //
+        Parent addPartParent = FXMLLoader.load(getClass().getResource("ModifyPart.fxml"));
+        Scene addPartScene = new Scene(addPartParent);
+
+        //Get Stage info
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(addPartScene);
+        window.show();
+    }
+
 }
