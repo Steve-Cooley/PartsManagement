@@ -32,7 +32,7 @@
                   <ButtonBar layoutX="156.0" layoutY="408.0" prefHeight="40.0" prefWidth="239.0">
                     <buttons>
                       <Button id="partsAddButton" mnemonicParsing="false" onAction="#toAddPartScreen" text="Add" />
-                        <Button id="partsModifyButton" mnemonicParsing="false" text="Modify" />
+                        <Button id="partsModifyButton" mnemonicParsing="false" onAction="#toModifyPartScreen" text="Modify" />
                         <Button id="partsDeleteButton" mnemonicParsing="false" text="Delete" />
                     </buttons>
                   </ButtonBar>
