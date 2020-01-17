@@ -51,7 +51,7 @@
                   <ButtonBar layoutX="161.0" layoutY="414.0" prefHeight="40.0" prefWidth="200.0">
                     <buttons>
                       <Button id="productsAddButton" mnemonicParsing="false" onAction="#toAddProductScreen" text="Add" />
-                        <Button id="productsModifyButton" mnemonicParsing="false" text="Modify" />
+                        <Button id="productsModifyButton" mnemonicParsing="false" onAction="#toModifyProductScreen" text="Modify" />
                         <ButtonBar prefHeight="40.0" prefWidth="200.0">
                           <buttons>
                             <Button id="productsDeleteButton" mnemonicParsing="false" text="Delete" />
