@@ -50,7 +50,7 @@
                   <Button id="ProductsSearchButton" layoutX="232.0" layoutY="39.0" mnemonicParsing="false" text="Search" />
                   <ButtonBar layoutX="161.0" layoutY="414.0" prefHeight="40.0" prefWidth="200.0">
                     <buttons>
-                      <Button id="productsAddButton" mnemonicParsing="false" text="Add" />
+                      <Button id="productsAddButton" mnemonicParsing="false" onAction="#toAddProductScreen" text="Add" />
                         <Button id="productsModifyButton" mnemonicParsing="false" text="Modify" />
                         <ButtonBar prefHeight="40.0" prefWidth="200.0">
                           <buttons>

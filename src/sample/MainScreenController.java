@@ -53,4 +53,16 @@ public class MainScreenController {
         window.show();
     }
 
+    public void toModifyProductScreen(ActionEvent event) throws IOException {
+        //
+        Parent addPartParent = FXMLLoader.load(getClass().getResource("ModifyProduct.fxml"));
+        Scene addPartScene = new Scene(addPartParent);
+
+        //Get Stage info
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(addPartScene);
+        window.show();
+    }
+
 }
