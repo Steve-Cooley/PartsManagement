@@ -12,7 +12,7 @@
             <Label layoutX="27.0" layoutY="27.0" text="Modify Part" />
             <ButtonBar layoutX="329.0" layoutY="332.0" prefHeight="40.0" prefWidth="200.0">
               <buttons>
-                <Button id="cancelButton" mnemonicParsing="false" text="Cancel" />
+                <Button id="cancelButton" mnemonicParsing="false" onAction="#toMainScene" text="Cancel" />
               </buttons>
             </ButtonBar>
          </children>
