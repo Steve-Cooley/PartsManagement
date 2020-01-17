@@ -23,7 +23,7 @@ public class MainScreenController {
         Scene addPartScene = new Scene(addPartParent);
 
         //Get Stage info
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();  //witchery to me fixme
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(addPartScene);
         window.show();

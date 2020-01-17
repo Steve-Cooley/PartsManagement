@@ -10,13 +10,13 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ModifyPartController {
-    public void toModifyPartScreen(ActionEvent event) throws IOException {
+    public void toMainScene(ActionEvent event) throws IOException {
         //
-        Parent addPartParent = FXMLLoader.load(getClass().getResource("ModifyPart.fxml"));
+        Parent addPartParent = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         Scene addPartScene = new Scene(addPartParent);
 
         //Get Stage info
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();  //witchery to me fixme
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(addPartScene);
         window.show();
