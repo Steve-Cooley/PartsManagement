@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class AddPartController {
 
-        public void toAddPartScreen(ActionEvent event) throws IOException {
+        public void toMainScene(ActionEvent event) throws IOException {
         //
         Parent addPartParent = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         Scene addPartScene = new Scene(addPartParent);
