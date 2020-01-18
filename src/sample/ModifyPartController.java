@@ -11,7 +11,6 @@ import java.io.IOException;
 
 public class ModifyPartController {
     public void toMainScene(ActionEvent event) throws IOException {
-        //
         Parent addPartParent = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         Scene addPartScene = new Scene(addPartParent);
 
