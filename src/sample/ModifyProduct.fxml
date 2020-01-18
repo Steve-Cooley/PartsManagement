@@ -15,7 +15,7 @@
    <children>
       <AnchorPane layoutX="-310.0" layoutY="-232.0" prefHeight="632.0" prefWidth="983.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label id="titleLabel" layoutX="34.0" layoutY="32.0" text="Add Product" />
+            <Label id="titleLabel" layoutX="34.0" layoutY="32.0" text="Modify Product" />
             <ButtonBar layoutX="722.0" layoutY="592.0" prefHeight="40.0" prefWidth="200.0">
                <buttons>
                   <Button mnemonicParsing="false" text="Save" />
