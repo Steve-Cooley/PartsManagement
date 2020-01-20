@@ -3,6 +3,7 @@
 package sample;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -18,7 +19,6 @@ public class MainScreenController {
      * fixme note to self, these methods show up in scenebuilder
      */
     public void toAddPartScreen(ActionEvent event) throws IOException {
-        //
         Parent addPartParent = FXMLLoader.load(getClass().getResource("AddPart.fxml"));
         Scene addPartScene = new Scene(addPartParent);
 
@@ -30,7 +30,6 @@ public class MainScreenController {
     }
 
     public void toModifyPartScreen(ActionEvent event) throws IOException {
-        //
         Parent addPartParent = FXMLLoader.load(getClass().getResource("ModifyPart.fxml"));
         Scene addPartScene = new Scene(addPartParent);
 
@@ -53,6 +52,7 @@ public class MainScreenController {
         window.show();
     }
 
+    @FXML
     public void toModifyProductScreen(ActionEvent event) throws IOException {
         //
         Parent addPartParent = FXMLLoader.load(getClass().getResource("ModifyProduct.fxml"));
@@ -64,5 +64,8 @@ public class MainScreenController {
         window.setScene(addPartScene);
         window.show();
     }
+
+    //@FXML
+
 
 }
