@@ -16,7 +16,7 @@ public class MainScreenController {
 
     /**
      * Method to change Scene to addPart
-     * fixme note to self, these methods show up in scenebuilder
+     * fixme note to self, these methods show up in scenebuilder even without @FXML annotation
      */
     @FXML
     public void toAddPartScreen(ActionEvent event) throws IOException {
