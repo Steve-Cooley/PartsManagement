@@ -23,6 +23,7 @@ public class AddPartController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
+        //group toggle buttons
         inOutSourceToggleGroup = new ToggleGroup();
         this.inHouse.setToggleGroup(inOutSourceToggleGroup);
         this.outSourced.setToggleGroup(inOutSourceToggleGroup);
@@ -40,5 +41,4 @@ public class AddPartController implements Initializable {
         window.show();
     }
 
-    inOutToggleGroup =
 }
