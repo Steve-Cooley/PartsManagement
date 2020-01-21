@@ -1,18 +1,28 @@
 // I think @FXML stuff goes here
+//I think that these controllers are supposed to have "initialize methods fixme initialize methods for all controllers
+//Yes, it turns out that they are supposed to have initialize methods, which is an override from initializable
 
 package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class MainScreenController {
+public class MainScreenController implements Initializable {
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+    }
 
     /**
      * Method to change Scene to addPart
