@@ -18,6 +18,7 @@ public class MainScreenController {
      * Method to change Scene to addPart
      * fixme note to self, these methods show up in scenebuilder
      */
+    @FXML
     public void toAddPartScreen(ActionEvent event) throws IOException {
         Parent addPartParent = FXMLLoader.load(getClass().getResource("AddPart.fxml"));
         Scene addPartScene = new Scene(addPartParent);
@@ -29,6 +30,7 @@ public class MainScreenController {
         window.show();
     }
 
+    @FXML
     public void toModifyPartScreen(ActionEvent event) throws IOException {
         Parent addPartParent = FXMLLoader.load(getClass().getResource("ModifyPart.fxml"));
         Scene addPartScene = new Scene(addPartParent);
@@ -40,8 +42,8 @@ public class MainScreenController {
         window.show();
     }
 
+    @FXML
     public void toAddProductScreen(ActionEvent event) throws IOException {
-        //
         Parent addPartParent = FXMLLoader.load(getClass().getResource("AddProduct.fxml"));
         Scene addPartScene = new Scene(addPartParent);
 
