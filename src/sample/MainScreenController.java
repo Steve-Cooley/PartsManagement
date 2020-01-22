@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -38,6 +39,11 @@ public class MainScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //part table
+        partIDCol.setCellValueFactory(new PropertyValueFactory<Part, String>("Part ID"));
+        partIDCol.setCellValueFactory(new PropertyValueFactory<Part, String>("Part Name"));
+        partIDCol.setCellValueFactory(new PropertyValueFactory<Part, String>("Part Inventory Level"));
+        partIDCol.setCellValueFactory(new PropertyValueFactory<Part, String>("Part Cost"));
 
     }
 
