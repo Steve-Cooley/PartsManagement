@@ -22,7 +22,7 @@
                <children>
                   <TableView id="partsTable" fx:id="partsTable" layoutX="33.0" layoutY="115.0" prefHeight="266.0" prefWidth="547.0">
                     <columns>
-                      <TableColumn id="PartsIDTableColumn" fx:id="partIDCol" prefWidth="75.0" text="Parts ID" />
+                      <TableColumn id="PartsIDTableColumn" fx:id="partIDCol" prefWidth="75.0" text="Part ID" />
                       <TableColumn id="PartNameTableColumn" fx:id="partNameCol" prefWidth="119.0" text="Part Name" />
                         <TableColumn id="PartInventoryLevelTableColumn" fx:id="partInvCol" prefWidth="190.0" text="Inventory Level" />
                         <TableColumn id="PartsCostTableColumn" fx:id="partCostCol" prefWidth="162.0" text="Cost per Unit" />

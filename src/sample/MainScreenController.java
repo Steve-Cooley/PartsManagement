@@ -4,6 +4,8 @@
 
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,6 +47,19 @@ public class MainScreenController implements Initializable {
         partIDCol.setCellValueFactory(new PropertyValueFactory<Part, String>("Part Inventory Level"));
         partIDCol.setCellValueFactory(new PropertyValueFactory<Part, String>("Part Cost"));
 
+        //load some data
+        partsTable.setItems(getParts());
+    }
+
+    /**
+     * return observableList of parts objects
+     */
+    public ObservableList<Part> getParts() {
+        ObservableList<Part> parts = FXCollections.observableArrayList();
+        parts.add(new InHouse(1, "Pipe Wrench", 1.20, 9, 1,100, 13));
+        parts.add(new InHouse(1, "Ratchet", 1.21, 9, 10,100, 13));
+        parts.add(new InHouse(1, "Hammer", 1.22, 9, 19,100, 13));
+        return parts;
     }
 
     /**
