@@ -63,7 +63,7 @@ public class MainScreenController implements Initializable {
     }
 
     /**
-     * Method to change Scene to addPart
+     * Method to change Scene to addPart  Test!
      * fixme note to self, these methods show up in scenebuilder even without @FXML annotation
      */
     @FXML
