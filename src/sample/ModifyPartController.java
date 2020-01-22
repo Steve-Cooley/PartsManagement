@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
@@ -20,6 +21,7 @@ public class ModifyPartController implements Initializable {
     @FXML private RadioButton inHouse;
     @FXML private RadioButton outSourced;
     @FXML private ToggleGroup inOutSourceToggleGroup;
+    @FXML private Label mutableLabel;
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -29,6 +31,9 @@ public class ModifyPartController implements Initializable {
         this.outSourced.setToggleGroup(inOutSourceToggleGroup);
         //set default
         this.inHouse.setSelected(true);
+
+        //mutableLabel
+        mutableLabel.setText("Machine ID");
     }
 
     public void toMainScene(ActionEvent event) throws IOException {
@@ -40,5 +45,14 @@ public class ModifyPartController implements Initializable {
 
         window.setScene(addPartScene);
         window.show();
+    }
+
+    public void radioButtonChange() {
+        if(this.inOutSourceToggleGroup.getSelectedToggle().equals(this.inHouse)) {
+            mutableLabel.setText("Company Name");
+        }
+        if(this.inOutSourceToggleGroup.getSelectedToggle().equals(this.outSourced)) {
+            mutableLabel.setText("Machine ID");
+        }
     }
 }

@@ -20,12 +20,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView id="partsTable" layoutX="33.0" layoutY="115.0" prefHeight="266.0" prefWidth="547.0">
+                  <TableView id="partsTable" fx:id="partsTable" layoutX="33.0" layoutY="115.0" prefHeight="266.0" prefWidth="547.0">
                     <columns>
-                      <TableColumn id="PartsIDTableColumn" prefWidth="75.0" text="Parts ID" />
-                      <TableColumn id="PartNameTableColumn" prefWidth="119.0" text="Part Name" />
-                        <TableColumn id="PartInventoryLevelTableColumn" prefWidth="190.0" text="Inventory Level" />
-                        <TableColumn id="PartsCostTableColumn" prefWidth="162.0" text="Cost per Unit" />
+                      <TableColumn id="PartsIDTableColumn" fx:id="partIDCol" prefWidth="75.0" text="Parts ID" />
+                      <TableColumn id="PartNameTableColumn" fx:id="partNameCol" prefWidth="119.0" text="Part Name" />
+                        <TableColumn id="PartInventoryLevelTableColumn" fx:id="partInvCol" prefWidth="190.0" text="Inventory Level" />
+                        <TableColumn id="PartsCostTableColumn" fx:id="partCostCol" prefWidth="162.0" text="Cost per Unit" />
                     </columns>
                   </TableView>
                   <Label layoutX="40.0" layoutY="42.0" text="Parts" />

@@ -26,15 +26,15 @@ public class AddPartController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb){
         //group radio buttons
-        inOutSourceToggleGroup = new ToggleGroup();
+        inOutSourceToggleGroup = new ToggleGroup();  //definitely need this line
         this.inHouse.setToggleGroup(inOutSourceToggleGroup);
         this.outSourced.setToggleGroup(inOutSourceToggleGroup);
         //set default
         this.inHouse.setSelected(true);
 
         //mutableLabel
-        mutableLabel = new Label();
-        mutableLabel.setText("Test");
+        //mutableLabel = new Label();  //Don't need to use new on @FXML objects??? fixme ask teacher  This was causing problems before I removed it.
+        mutableLabel.setText("Company Name");  ///This doesn't seem to work if the above line is present
 
     }
 
@@ -50,7 +50,12 @@ public class AddPartController implements Initializable {
     }
 
     public void radioButtonChange() {
-        //
+        if(this.inOutSourceToggleGroup.getSelectedToggle().equals(this.inHouse)) {
+            mutableLabel.setText("Company Name");
+        }
+        if(this.inOutSourceToggleGroup.getSelectedToggle().equals(this.outSourced)) {
+            mutableLabel.setText("Machine ID");
+        }
     }
 
 }

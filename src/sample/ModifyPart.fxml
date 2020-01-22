@@ -15,8 +15,8 @@
          <children>
             <Button id="cancelButton" layoutX="499.0" layoutY="551.0" mnemonicParsing="false" onAction="#toMainScene" text="Cancel" />
             <Label id="addPartLabel" layoutX="34.0" layoutY="29.0" text="Modify sample.Part" />
-            <RadioButton id="inHouseRadioButton" fx:id="inHouse" layoutX="195.0" layoutY="28.0" mnemonicParsing="false" text="In-House" />
-            <RadioButton id="outsourcedRadioButton" fx:id="outSourced" layoutX="332.0" layoutY="28.0" mnemonicParsing="false" text="Outsourced" />
+            <RadioButton id="inHouseRadioButton" fx:id="inHouse" layoutX="195.0" layoutY="28.0" mnemonicParsing="false" onAction="#radioButtonChange" text="In-House" />
+            <RadioButton id="outsourcedRadioButton" fx:id="outSourced" layoutX="332.0" layoutY="28.0" mnemonicParsing="false" onAction="#radioButtonChange" text="Outsourced" />
             <GridPane layoutX="53.0" layoutY="89.0" prefHeight="402.0" prefWidth="469.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="158.0" minWidth="10.0" prefWidth="131.0" />
@@ -38,7 +38,7 @@
                   <Label id="invLabel" text="Inv" GridPane.rowIndex="2" />
                   <Label id="priceLabel" text="Price/Cost" GridPane.rowIndex="3" />
                   <Label id="partMaxLabel" text="max" GridPane.rowIndex="4" />
-                  <Label id="companyNameLabel" text="Company Name" GridPane.rowIndex="5" />
+                  <Label id="companyNameLabel" fx:id="mutableLabel" text="Company Name" GridPane.rowIndex="5" />
                   <TextField id="partIDField" GridPane.columnIndex="1" />
                   <TextField id="partNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField id="partInvField" GridPane.columnIndex="1" GridPane.rowIndex="2" />

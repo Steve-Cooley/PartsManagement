@@ -11,6 +11,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,6 +21,20 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MainScreenController implements Initializable {
+
+    //configure Parts table
+    @FXML private TableView<Part> partsTable;
+    @FXML private TableColumn<Part, String> partIDCol;
+    @FXML private TableColumn<Part, String> partNameCol;
+    @FXML private TableColumn<Part, String> partInvCol;
+    @FXML private TableColumn<Part, String> partCostCol;
+
+    //configure products table
+    @FXML private TableView<Part> productsTable;
+    @FXML private TableColumn<Part, String> prodIDCol;
+    @FXML private TableColumn<Part, String> prodNameCol;
+    @FXML private TableColumn<Part, String> prodInvCol;
+    @FXML private TableColumn<Part, String> prodCostCol;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
