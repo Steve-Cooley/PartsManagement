@@ -23,10 +23,12 @@ public class ModifyPartController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        //group toggle buttons
+        //group radio buttons
         inOutSourceToggleGroup = new ToggleGroup();
         this.inHouse.setToggleGroup(inOutSourceToggleGroup);
         this.outSourced.setToggleGroup(inOutSourceToggleGroup);
+        //set default
+        this.inHouse.setSelected(true);
     }
 
     public void toMainScene(ActionEvent event) throws IOException {
