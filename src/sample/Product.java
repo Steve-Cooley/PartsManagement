@@ -7,7 +7,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.ObservableList;
 
 public class Product {
-    private ObservableList<Part> associatedParts;
+    private ObservableList<Part> associatedParts;  //I think that each product has a list of other associated prods
     private SimpleIntegerProperty ID;
     private SimpleStringProperty name;
     private SimpleDoubleProperty price;
@@ -107,11 +107,15 @@ public class Product {
         this.max.set(max);
     }
 
-    public void addAssociatedPart(Part part){} //fixme
+    public void addAssociatedPart(Part part) { //fixme
+        //
+
+    } //fixme
 
     public boolean deleteAssociatedPart(Part selectedAsPart){
         return true; //fixme
     }
 
-    //public ObservableList<Part> getAllAssociatedParts(){} //fixme
+    //public ObservableList<Part> getAllAssociatedParts() { //fixme
+    // }
 }

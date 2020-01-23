@@ -13,13 +13,13 @@ public class InHouse extends Part {
 
     /**
      *
-     * @param id
-     * @param name
-     * @param price
-     * @param stock
-     * @param min
-     * @param max
-     * @param machineID
+     * @param id Id number
+     * @param name Name of part
+     * @param price price of part
+     * @param stock how many in stock
+     * @param min minimal acceptable quantity
+     * @param max maximum that can be stored
+     * @param machineID Not sure what this is supposed to be fixme
      */
     public InHouse(IntegerProperty id, SimpleStringProperty name, DoubleProperty price, IntegerProperty stock,
                    IntegerProperty min, IntegerProperty max, SimpleIntegerProperty machineID) {
@@ -29,13 +29,13 @@ public class InHouse extends Part {
 
     /**
      *
-     * @param id
-     * @param name
-     * @param price
-     * @param stock
-     * @param min
-     * @param max
-     * @param machineID
+     * @param id id number
+     * @param name Name of part
+     * @param price price of part
+     * @param stock quantity on hand
+     * @param min minimum quantity
+     * @param max max that can be stored
+     * @param machineID not sure
      */
     public InHouse(int id, String name, double price, int stock, int min, int max, int machineID) {
         super(id, name, price, stock, min, max);
