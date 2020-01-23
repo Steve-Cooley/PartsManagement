@@ -29,7 +29,7 @@ public abstract class Part {
         this.max = new SimpleIntegerProperty(max);
     }
 
-    public int getId() {
+    public int getID() {
         return id.get();
     }
 

@@ -25,45 +25,13 @@ import java.util.ResourceBundle;
 
 public class MainScreenController implements Initializable {
 
-    //configure Parts table
-    @FXML private TableView<Part> partsTable;
-    @FXML private TableColumn<Part, String> partIDCol;
-    @FXML private TableColumn<Part, String> partNameCol;
-    @FXML private TableColumn<Part, String> partInvCol;
-    @FXML private TableColumn<Part, String> partCostCol;
-
-    //configure products table
-    @FXML private TableView<Part> productsTable;
-    @FXML private TableColumn<Part, String> prodIDCol;
-    @FXML private TableColumn<Part, String> prodNameCol;
-    @FXML private TableColumn<Part, String> prodInvCol;
-    @FXML private TableColumn<Part, String> prodCostCol;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //part table
-        partIDCol.setCellValueFactory(new PropertyValueFactory<Part, String>("Part ID"));
-        partIDCol.setCellValueFactory(new PropertyValueFactory<Part, String>("Part Name"));
-        partIDCol.setCellValueFactory(new PropertyValueFactory<Part, String>("Part Inventory Level"));
-        partIDCol.setCellValueFactory(new PropertyValueFactory<Part, String>("Part Cost"));
-
-        //load some data
-        partsTable.setItems(getParts());
     }
 
     /**
-     * return observableList of parts objects
-     */
-    public ObservableList<Part> getParts() {
-        ObservableList<Part> parts = FXCollections.observableArrayList();
-        parts.add(new InHouse(1, "Pipe Wrench", 1.20, 9, 1,100, 13));
-        parts.add(new InHouse(1, "Ratchet", 1.21, 9, 10,100, 13));
-        parts.add(new InHouse(1, "Hammer", 1.22, 9, 19,100, 13));
-        return parts;
-    }
-
-    /**
-     * Method to change Scene to addPart  Test!
+     * Method to change Scene to addPart
      * fixme note to self, these methods show up in scenebuilder even without @FXML annotation
      */
     @FXML
@@ -114,8 +82,6 @@ public class MainScreenController implements Initializable {
         window.setScene(addPartScene);
         window.show();
     }
-
-    //@FXML
 
 
 }

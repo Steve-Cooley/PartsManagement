@@ -8,7 +8,7 @@ import javafx.collections.ObservableList;
 
 public class Product {
     private ObservableList<Part> associatedParts;
-    private SimpleIntegerProperty id;
+    private SimpleIntegerProperty ID;
     private SimpleStringProperty name;
     private SimpleDoubleProperty price;
     private SimpleIntegerProperty stock;
@@ -19,7 +19,7 @@ public class Product {
                    SimpleDoubleProperty price, SimpleIntegerProperty stock, SimpleIntegerProperty min,
                    SimpleIntegerProperty max) {
         this.associatedParts = associatedParts;
-        this.id = id;
+        this.ID = id;
         this.name = name;
         this.price = price;
         this.stock = stock;
@@ -35,16 +35,16 @@ public class Product {
         this.associatedParts = associatedParts;
     }
 
-    public int getId() {
-        return id.get();
+    public int getID() {
+        return ID.get();
     }
 
-    public IntegerProperty idProperty() {
-        return id;
+    public IntegerProperty IDProperty() {
+        return ID;
     }
 
-    public void setId(int id) {
-        this.id.set(id);
+    public void setID(int ID) {
+        this.ID.set(ID);
     }
 
     public String getName() {
