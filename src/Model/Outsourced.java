@@ -1,5 +1,6 @@
-package sample;
+package Model;
 
+import Model.Part;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleStringProperty;

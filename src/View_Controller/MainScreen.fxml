@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="736.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainScreenController">
+<AnchorPane prefHeight="736.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.MainScreenController">
    <children>
       <Label layoutX="56.0" layoutY="41.0" prefHeight="33.0" prefWidth="239.0" text="Inventory Management System" textFill="#2f0be1">
          <font>

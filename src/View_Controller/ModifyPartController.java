@@ -1,4 +1,4 @@
-package sample;
+package View_Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AddPartController implements Initializable {
+public class ModifyPartController implements Initializable {
 
     @FXML private RadioButton inHouse;
     @FXML private RadioButton outSourced;
@@ -26,16 +26,14 @@ public class AddPartController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb){
         //group radio buttons
-        inOutSourceToggleGroup = new ToggleGroup();  //definitely need this line
+        inOutSourceToggleGroup = new ToggleGroup();
         this.inHouse.setToggleGroup(inOutSourceToggleGroup);
         this.outSourced.setToggleGroup(inOutSourceToggleGroup);
         //set default
         this.inHouse.setSelected(true);
 
         //mutableLabel
-        //mutableLabel = new Label();  //Don't need to use new on @FXML objects??? fixme ask teacher  This was causing problems before I removed it.
-        mutableLabel.setText("Company Name");  ///This doesn't seem to work if the above line is present
-
+        mutableLabel.setText("Machine ID");
     }
 
     public void toMainScene(ActionEvent event) throws IOException {
@@ -43,7 +41,7 @@ public class AddPartController implements Initializable {
         Scene addPartScene = new Scene(addPartParent);
 
         //Get Stage info
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(addPartScene);
         window.show();
@@ -57,5 +55,4 @@ public class AddPartController implements Initializable {
             mutableLabel.setText("Machine ID");
         }
     }
-
 }

@@ -9,12 +9,12 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="620.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ModifyPartController">
+<AnchorPane prefHeight="620.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.AddPartController">
    <children>
       <AnchorPane prefHeight="566.0" prefWidth="681.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button id="cancelButton" layoutX="499.0" layoutY="551.0" mnemonicParsing="false" onAction="#toMainScene" text="Cancel" />
-            <Label id="addPartLabel" layoutX="34.0" layoutY="29.0" text="Modify sample.Part" />
+            <Label id="addPartLabel" layoutX="34.0" layoutY="29.0" text="Add Model.Part" />
             <RadioButton id="inHouseRadioButton" fx:id="inHouse" layoutX="195.0" layoutY="28.0" mnemonicParsing="false" onAction="#radioButtonChange" text="In-House" />
             <RadioButton id="outsourcedRadioButton" fx:id="outSourced" layoutX="332.0" layoutY="28.0" mnemonicParsing="false" onAction="#radioButtonChange" text="Outsourced" />
             <GridPane layoutX="53.0" layoutY="89.0" prefHeight="402.0" prefWidth="469.0">
@@ -38,7 +38,7 @@
                   <Label id="invLabel" text="Inv" GridPane.rowIndex="2" />
                   <Label id="priceLabel" text="Price/Cost" GridPane.rowIndex="3" />
                   <Label id="partMaxLabel" text="max" GridPane.rowIndex="4" />
-                  <Label id="companyNameLabel" fx:id="mutableLabel" text="Company Name" GridPane.rowIndex="5" />
+                  <Label id="mutableLabel" fx:id="mutableLabel" text="Error!" GridPane.rowIndex="5" />
                   <TextField id="partIDField" GridPane.columnIndex="1" />
                   <TextField id="partNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField id="partInvField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
