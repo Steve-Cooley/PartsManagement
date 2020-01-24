@@ -54,6 +54,7 @@ public class Inventory {
      * think that it makes any sense to the project to return a whole ObservableList when my other lookUP method return
      * Parts.  My CI said that I should
      * go ahead and follow the directions even if they don't make sense. Maybe it will make sense later.  fixme
+     * **figured it out.
      * @param partName
      * @return ObservableList
      */
