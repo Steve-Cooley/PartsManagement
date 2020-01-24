@@ -6,6 +6,7 @@ package View_Controller;
 
 import Model.Inventory;
 import Model.Part;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,8 +59,9 @@ public class MainScreenController implements Initializable {
 
     @FXML
     private void closeButtonAction() {
-        Stage stage = (Stage) exitButton.getScene().getWindow();
-        stage.close();
+        Platform.exit();  // Guaranteed to kill the whole program
+        //Stage stage = (Stage) exitButton.getScene().getWindow();
+        //stage.close();
     }
 
     /**
