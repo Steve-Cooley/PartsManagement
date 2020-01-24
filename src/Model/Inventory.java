@@ -59,13 +59,14 @@ public class Inventory {
      * @return ObservableList
      */
     public static ObservableList<Part> lookUpPart(String partName){
-        //for(int i=0; i < allParts.size(); ++i) {
-        //    if (allParts.get(i).getName() == partName) {
-        //        return allParts.get(i);
-        //    }
-        //}
+        ObservableList<Part> outp = FXCollections.observableArrayList();
+        for(int i=0; i < allParts.size(); ++i) {
+            if (allParts.get(i).getName().contains(partName)) {
+                outp.add(allParts.get(i));
+            }
+        }
 
-        return allParts;
+        return outp;
     }
 
     /**
