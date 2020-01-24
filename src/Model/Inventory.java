@@ -41,7 +41,7 @@ public class Inventory {
      */
     public static Product lookUpProduct(int productID) {
         for(int i = 0; i < allProducts.size(); ++i){
-            if(allProducts.get(i).getID() == productID) {
+            if(allProducts.get(i).getId() == productID) {
                 return allProducts.get(i);
             }
         }
@@ -163,7 +163,7 @@ public class Inventory {
         deletePart(allParts.get(0));
         System.out.println("Deleted part at index0: " + allParts.toString());
 
-        //addProduct(new )
+        addProduct(new Product(138, "prodTaco", 2.99, 100, 14, 201) );
 
     }
 

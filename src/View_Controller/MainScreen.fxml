@@ -66,6 +66,6 @@
                </children></AnchorPane>
         </items>
       </SplitPane>
-      <Button id="exitButton" layoutX="1133.0" layoutY="677.0" mnemonicParsing="false" onAction="#toAddPartScreen" text="Exit" />
+      <Button id="exitButton" fx:id="exitButton" layoutX="1133.0" layoutY="677.0" mnemonicParsing="false" onAction="#closeButtonAction" text="Exit" />
    </children>
 </AnchorPane>
