@@ -58,7 +58,7 @@ public class Inventory {
      * @param partName
      * @return ObservableList
      */
-    public static ObservableList<Part> lookUpPart(String partName){
+    public  ObservableList<Part> lookUpPart(String partName){
         ObservableList<Part> outp = FXCollections.observableArrayList();
         for(int i=0; i < allParts.size(); ++i) {
             if (allParts.get(i).getName().contains(partName)) {
@@ -80,6 +80,7 @@ public class Inventory {
      * @return
      */
     public static ObservableList<Product> lookUpProduct(String productName) {
+        //public
         return allProducts;
     }
 
