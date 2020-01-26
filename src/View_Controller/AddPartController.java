@@ -1,5 +1,6 @@
 package View_Controller;
 
+import Model.InHouse;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
@@ -18,6 +20,11 @@ import java.util.ResourceBundle;
 
 public class AddPartController implements Initializable {
 
+    @FXML private TextField idField;
+    @FXML private TextField nameField;
+    @FXML private TextField invField;
+    @FXML private TextField costField;
+    @FXML private TextField mutableField;
     @FXML private RadioButton inHouse;
     @FXML private RadioButton outSourced;
     @FXML private ToggleGroup inOutSourceToggleGroup;
@@ -29,13 +36,20 @@ public class AddPartController implements Initializable {
         inOutSourceToggleGroup = new ToggleGroup();  //definitely need this line
         this.inHouse.setToggleGroup(inOutSourceToggleGroup);
         this.outSourced.setToggleGroup(inOutSourceToggleGroup);
-        //set default
+        //set inHouse selected by default
         this.inHouse.setSelected(true);
+        //set mutable label default
+        mutableLabel.setText("Company Name");
 
-        //mutableLabel
-        //mutableLabel = new Label();  //Don't need to use new on @FXML objects??? fixme ask teacher  This was causing problems before I removed it.
-        mutableLabel.setText("Company Name");  ///This doesn't seem to work if the above line is present
+    }
 
+    private void onSaveButton() {
+        System.out.println("add button pushed");
+
+        if (inHouse.isSelected()) {
+            System.out.println("inHouse is selected");
+            //
+        }
     }
 
     public void toMainScene(ActionEvent event) throws IOException {

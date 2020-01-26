@@ -6,6 +6,7 @@ package View_Controller;
 
 import Model.Inventory;
 import Model.Part;
+import Model.Product;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,12 +28,12 @@ import java.util.ResourceBundle;
 public class MainScreenController implements Initializable {
 
     @FXML private Button exitButton;
-    @FXML private TableView partsTable;
+    @FXML private TableView<Part> partsTable;
     @FXML private TableColumn partIDCol;
     @FXML private TableColumn partNameCol;
     @FXML private TableColumn partInvCol;
     @FXML private TableColumn partCostCol;
-    @FXML private TableView productsTable;
+    @FXML private TableView<Product> productsTable;     //typing may cause trouble. Pay attention!
     @FXML private TableColumn prodIDCol;
     @FXML private TableColumn prodNameCol;
     @FXML private TableColumn prodInvCol;
@@ -60,8 +61,8 @@ public class MainScreenController implements Initializable {
     @FXML
     private void closeButtonAction() {
         Platform.exit();  // Guaranteed to kill the whole program
-        //Stage stage = (Stage) exitButton.getScene().getWindow();
-        //stage.close();
+        //Stage stage = (Stage) exitButton.getScene().getWindow();  fixme Probably should delete before submission
+        //stage.close();  //kills stage, not necessarily whole program
     }
 
     /**
