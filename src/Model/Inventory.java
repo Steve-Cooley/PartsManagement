@@ -120,6 +120,7 @@ public class Inventory {
     }
 
     public static boolean deleteProduct(Product selectedProduct) {
+        System.out.println("deleting product");
         int len = allProducts.size();
         for (int i=0; i<len; ++i) {
             if (allProducts.get(i) == selectedProduct) {
