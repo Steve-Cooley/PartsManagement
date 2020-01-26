@@ -41,6 +41,7 @@ public class AddPartController implements Initializable {
 
     }
 
+    @FXML
     private void onSaveButton() {
         System.out.println("add button pushed");
 
