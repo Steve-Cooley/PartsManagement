@@ -27,6 +27,7 @@ import java.util.ResourceBundle;
 
 public class MainScreenController implements Initializable {
 
+    @FXML private Button delButton;
     @FXML private Button exitButton;
     @FXML private TableView<Part> partsTable;
     @FXML private TableColumn partIDCol;
@@ -59,10 +60,14 @@ public class MainScreenController implements Initializable {
     }
 
     @FXML
+    private void onDelButton() {
+        Part p = partsTable.getSelectionModel().getSelectedItem();
+        Inventory.deletePart(p);
+    }
+
+    @FXML
     private void closeButtonAction() {
         Platform.exit();  // Guaranteed to kill the whole program
-        //Stage stage = (Stage) exitButton.getScene().getWindow();  fixme Probably should delete before submission
-        //stage.close();  //kills stage, not necessarily whole program
     }
 
     /**

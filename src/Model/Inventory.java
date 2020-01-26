@@ -141,7 +141,26 @@ public class Inventory {
     /**
      * could copy paste some stuff from testerMethod() later.
      */
-    public static void loadSampleData(){}
+    public static void loadSampleData(){ //todo improve this test data
+        //add InHouse objects
+        addPart(new InHouse(10, "ih0", 2.50, 14, 3, 20, 1234 ));
+        addPart(new InHouse(10, "ih1", 2.50, 14, 3, 20, 1234 ));
+        addPart(new InHouse(10, "ih2", 2.50, 14, 3, 20, 1234 ));
+        addPart(new InHouse(10, "ih3", 2.50, 14, 3, 20, 1234 ));
+        addPart(new InHouse(10, "ih4", 2.50, 14, 3, 20, 1234 ));
+        //add OutSourced objects
+        addPart(new Outsourced(11, "OS0", 2.13, 12, 1, 200, "company1"));
+        addPart(new Outsourced(11, "OS1", 2.13, 12, 1, 200, "company1"));
+        addPart(new Outsourced(11, "OS2", 2.13, 12, 1, 200, "company1"));
+        addPart(new Outsourced(11, "OS3", 2.13, 12, 1, 200, "company1"));
+        addPart(new Outsourced(11, "OS4", 2.13, 12, 1, 200, "company1"));
+        //add Products
+        addProduct(new Product(138, "prod0", 2.99, 100, 14, 201) );
+        addProduct(new Product(138, "prod1", 2.99, 100, 14, 201) );
+        addProduct(new Product(138, "prod2", 2.99, 100, 14, 201) );
+        addProduct(new Product(138, "prod3", 2.99, 100, 14, 201) );
+        addProduct(new Product(138, "prod4", 2.99, 100, 14, 201) );
+    }
 
     /**
      * This should probably be removed before submission

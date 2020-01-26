@@ -35,7 +35,7 @@
                     <buttons>
                       <Button id="partsAddButton" mnemonicParsing="false" onAction="#toAddPartScreen" text="Add" />
                         <Button id="partsModifyButton" mnemonicParsing="false" onAction="#toModifyPartScreen" text="Modify" />
-                        <Button id="partsDeleteButton" mnemonicParsing="false" text="Delete" />
+                        <Button id="partsDeleteButton" fx:id="delButton" mnemonicParsing="false" text="Delete" />
                     </buttons>
                   </ButtonBar>
                </children></AnchorPane>

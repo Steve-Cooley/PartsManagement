@@ -49,10 +49,10 @@ public class ModifyPartController implements Initializable {
 
     public void radioButtonChange() {
         if(this.inOutSourceToggleGroup.getSelectedToggle().equals(this.inHouse)) {
-            mutableLabel.setText("Company Name");
+            mutableLabel.setText("Machine ID");
         }
         if(this.inOutSourceToggleGroup.getSelectedToggle().equals(this.outSourced)) {
-            mutableLabel.setText("Machine ID");
+            mutableLabel.setText("Company Name");
         }
     }
 }
