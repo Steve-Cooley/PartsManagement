@@ -11,21 +11,21 @@ public class InHouse extends Part {
 
     //fixme Redundant constructor?
 
-    /**
-     *
-     * @param id Id number
-     * @param name Name of part
-     * @param price price of part
-     * @param stock how many in stock
-     * @param min minimal acceptable quantity
-     * @param max maximum that can be stored
-     * @param machineID Not sure what this is supposed to be fixme
-     */
-    public InHouse(IntegerProperty id, SimpleStringProperty name, DoubleProperty price, IntegerProperty stock,
-                   IntegerProperty min, IntegerProperty max, SimpleIntegerProperty machineID) {
-        super(id, name, price, stock, min, max);
-        this.machineID = machineID;
-    }
+//    /**
+//     *
+//     * @param id Id number
+//     * @param name Name of part
+//     * @param price price of part
+//     * @param stock how many in stock
+//     * @param min minimal acceptable quantity
+//     * @param max maximum that can be stored
+//     * @param machineID Not sure what this is supposed to be fixme
+//     */
+//    public InHouse(IntegerProperty id, SimpleStringProperty name, DoubleProperty price, IntegerProperty stock,
+//                   IntegerProperty min, IntegerProperty max, SimpleIntegerProperty machineID) {
+//        super(id, name, price, stock, min, max);
+//        this.machineID = machineID;
+//    }
 
     /**
      *

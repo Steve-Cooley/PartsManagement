@@ -1,6 +1,8 @@
 package View_Controller;
 
 import Model.InHouse;
+import Model.Inventory;
+import Model.Outsourced;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +19,9 @@ import java.util.ResourceBundle;
 
 public class AddPartController implements Initializable {
 
+    @FXML private Button cancelButton;
+    @FXML private TextField maxField;
+    @FXML private TextField minField;
     @FXML private Button saveButton;
     @FXML private TextField idField;
     @FXML private TextField nameField;
@@ -37,18 +42,44 @@ public class AddPartController implements Initializable {
         //set inHouse selected by default
         this.inHouse.setSelected(true);
         //set mutable label default
-        mutableLabel.setText("Company Name");
+        mutableLabel.setText("Machine ID");
 
     }
 
     @FXML
     private void onSaveButton() {
-        System.out.println("add button pushed");
+        //System.out.println("add button pushed");
+        int id;
+        String partN;
+        double cost;
+        int inv;
+        int min;
+        int max;
+        int machineID;
+        String compN;
 
         if (inHouse.isSelected()) {
-            System.out.println("inHouse is selected");
-            //
+            id = Integer.parseInt(idField.getText());
+            partN = nameField.getText();
+            cost = Double.parseDouble(costField.getText());
+            inv = Integer.parseInt(invField.getText());
+            min = Integer.parseInt(minField.getText());
+            max = Integer.parseInt(maxField.getText());
+            machineID = Integer.parseInt(mutableField.getText());
+
+            Inventory.addPart(new InHouse(id, partN, cost, inv, min, max, machineID));
+
+        } else {
+            id = Integer.parseInt(idField.getText());
+            partN = nameField.getText();
+            cost = Double.parseDouble(costField.getText());
+            inv = Integer.parseInt(invField.getText());
+            min = Integer.parseInt(minField.getText());
+            max = Integer.parseInt(maxField.getText());
+            compN = idField.getText();
+            Inventory.addPart(new Outsourced(id,partN,cost,inv,min,max,compN));
         }
+        cancelButton.fire();   //returns to main after finishing add
     }
 
     public void toMainScene(ActionEvent event) throws IOException {
@@ -64,10 +95,10 @@ public class AddPartController implements Initializable {
 
     public void radioButtonChange() {
         if(this.inOutSourceToggleGroup.getSelectedToggle().equals(this.inHouse)) {
-            mutableLabel.setText("Company Name");
+            mutableLabel.setText("Machine ID");
         }
         if(this.inOutSourceToggleGroup.getSelectedToggle().equals(this.outSourced)) {
-            mutableLabel.setText("Machine ID");
+            mutableLabel.setText("Company Name");
         }
     }
 
