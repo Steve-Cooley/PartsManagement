@@ -60,7 +60,13 @@ public class MainScreenController implements Initializable {
     }
 
     @FXML
-    private void onDelButton() {
+    private void delProductsButtonPressed() {
+        Product p = productsTable.getSelectionModel().getSelectedItem();
+        Inventory.deleteProduct(p);
+    }
+
+    @FXML
+    private void delPartsButtonPressed() {
         Part p = partsTable.getSelectionModel().getSelectedItem();
         Inventory.deletePart(p);
     }
