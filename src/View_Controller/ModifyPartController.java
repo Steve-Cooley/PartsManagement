@@ -1,5 +1,6 @@
 package View_Controller;
 
+import Model.Part;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,8 @@ import java.util.ResourceBundle;
 
 public class ModifyPartController implements Initializable {
 
+    private static Part prt;
+
     @FXML private RadioButton inHouse;
     @FXML private RadioButton outSourced;
     @FXML private ToggleGroup inOutSourceToggleGroup;
@@ -34,7 +37,18 @@ public class ModifyPartController implements Initializable {
 
         //mutableLabel
         mutableLabel.setText("Machine ID");
+
+        System.out.println("The object passed in is: " + prt);
+
+
     }
+
+    //This just receives "the pass"
+    public static void setPrt(Part prt) {
+        ModifyPartController.prt = prt;
+    }
+
+
 
     public void toMainScene(ActionEvent event) throws IOException {
         Parent addPartParent = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));

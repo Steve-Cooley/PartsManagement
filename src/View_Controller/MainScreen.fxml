@@ -58,7 +58,7 @@
                         <Button id="productsModifyButton" mnemonicParsing="false" onAction="#toModifyProductScreen" text="Modify" />
                         <ButtonBar prefHeight="40.0" prefWidth="200.0">
                           <buttons>
-                            <Button id="productsDeleteButton" mnemonicParsing="false" text="Delete" />
+                            <Button id="productsDeleteButton" mnemonicParsing="false" onMouseClicked="#delProductsButtonPressed" text="Delete" />
                           </buttons>
                         </ButtonBar>
                     </buttons>

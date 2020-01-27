@@ -10,16 +10,6 @@ public abstract class Part {
     private IntegerProperty min;
     private IntegerProperty max;
 
-    //fixme redundant constructor?
-    public Part(IntegerProperty id, SimpleStringProperty name, DoubleProperty price, IntegerProperty stock, IntegerProperty min, IntegerProperty max) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-        this.min = min;
-        this.max = max;
-    }
-
     public Part(int id, String name, double price, int stock, int min, int max){
         this.id = new SimpleIntegerProperty(id);
         this.name = new SimpleStringProperty(name);

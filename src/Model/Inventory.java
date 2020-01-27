@@ -10,6 +10,10 @@ public class Inventory {
     private static ObservableList<Part> allParts = FXCollections.observableArrayList();
     private static ObservableList<Product> allProducts = FXCollections.observableArrayList();
 
+    /**
+     * Fixme I think this needs to generate the ID number
+     * @param newPart
+     */
     public static void addPart(Part newPart) {
         allParts.add(newPart);
     }
@@ -70,8 +74,6 @@ public class Inventory {
     }
 
     /**
-     * Another dummy method. I think I'll leave these methods in, even if I also have to write methods that will be
-     * more useful. fixme
      * Edit:  OK, I've figured out what this method is for.  It's for use with a search feature
      * and it does actually make sense that it returns a list.  Basically it looks for a match
      * of a set of characters in the name of parts, and returns a list of all matches.
@@ -108,6 +110,11 @@ public class Inventory {
         allProducts.add(index,selectedProduct);
     }
 
+    /**
+     * Traverses list looking for matches.  If match found, deletes that object.
+     * @param selectedPart
+     * @return
+     */
     public static boolean deletePart(Part selectedPart) {
         int len = allParts.size();
         for (int i=0; i<len; ++i) {

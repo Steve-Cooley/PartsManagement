@@ -94,6 +94,11 @@ public class MainScreenController implements Initializable {
 
     @FXML
     public void toModifyPartScreen(ActionEvent event) throws IOException {
+        //Part p = partsTable.getSelectionModel().getSelectedItem();
+
+        //send in Part object
+        ModifyPartController.setPrt(partsTable.getSelectionModel().getSelectedItem());
+
         Parent addPartParent = FXMLLoader.load(getClass().getResource("ModifyPart.fxml"));
         Scene addPartScene = new Scene(addPartParent);
 
@@ -118,6 +123,8 @@ public class MainScreenController implements Initializable {
 
     @FXML
     public void toModifyProductScreen(ActionEvent event) throws IOException {
+        //send in Part object  //fixme alter to fit product instead of part
+        //ModifyPartController.setPrt(partsTable.getSelectionModel().getSelectedItem());
         //
         Parent addPartParent = FXMLLoader.load(getClass().getResource("ModifyProduct.fxml"));
         Scene addPartScene = new Scene(addPartParent);
