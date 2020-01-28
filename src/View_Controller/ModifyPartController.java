@@ -1,5 +1,7 @@
 package View_Controller;
 
+import Model.InHouse;
+import Model.Outsourced;
 import Model.Part;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
@@ -21,6 +24,11 @@ public class ModifyPartController implements Initializable {
 
     private static Part prt;
 
+    @FXML private TextField idField;
+    @FXML private TextField nameField;
+    @FXML private TextField invField;
+    @FXML private TextField costField;
+    @FXML private TextField varField;
     @FXML private RadioButton inHouse;
     @FXML private RadioButton outSourced;
     @FXML private ToggleGroup inOutSourceToggleGroup;
@@ -38,9 +46,20 @@ public class ModifyPartController implements Initializable {
         //mutableLabel
         mutableLabel.setText("Machine ID");
 
+        //set all fields based on the prt
         System.out.println("The object passed in is: " + prt);
-
-
+        idField.setText(Integer.toString(prt.getID()));
+        nameField.setText(prt.getName());
+        invField.setText(Integer.toString(prt.getStock()));
+        costField.setText(Double.toString(prt.getPrice()));
+        System.out.println("class is: " + prt.getClass());
+        if (prt instanceof InHouse) {
+            varField.setText(Integer.toString(((InHouse) prt).getMachineID()));
+        } else if(prt instanceof Outsourced) {
+            varField.setText(((Outsourced) prt).getCompanyName());
+        } else {
+            System.out.println("Couldn't Identify class of part"); //fixme this should never execute. delete before sub.
+        }
     }
 
     //This just receives "the pass"

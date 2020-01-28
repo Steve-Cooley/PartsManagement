@@ -39,16 +39,16 @@
                   <Label id="priceLabel" text="Price/Cost" GridPane.rowIndex="3" />
                   <Label id="partMaxLabel" text="max" GridPane.rowIndex="4" />
                   <Label id="companyNameLabel" fx:id="mutableLabel" text="Company Name" GridPane.rowIndex="5" />
-                  <TextField id="partIDField" GridPane.columnIndex="1" />
-                  <TextField id="partNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField id="partInvField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField id="partPriceField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField id="companyField" prefHeight="26.0" prefWidth="22.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField id="partIDField" fx:id="idField" GridPane.columnIndex="1" />
+                  <TextField id="partNameField" fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField id="partInvField" fx:id="invField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField id="partPriceField" fx:id="costField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField id="companyField" fx:id="varField" prefHeight="26.0" prefWidth="22.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <AnchorPane prefHeight="67.0" prefWidth="97.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <children>
-                        <TextField id="partMaxField" layoutX="-2.0" layoutY="21.0" prefHeight="26.0" prefWidth="123.0" />
+                        <TextField id="partMaxField" fx:id="maxField" layoutX="-2.0" layoutY="21.0" prefHeight="26.0" prefWidth="123.0" />
                      </children></AnchorPane>
-                  <TextField id="minField" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <TextField id="minField" fx:id="minField" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                   <Label id="minLabel" text="Min" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                </children>
             </GridPane>
