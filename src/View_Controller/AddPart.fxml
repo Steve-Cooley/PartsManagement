@@ -39,7 +39,7 @@
                   <Label id="priceLabel" text="Price/Cost" GridPane.rowIndex="3" />
                   <Label id="partMaxLabel" text="max" GridPane.rowIndex="4" />
                   <Label id="mutableLabel" fx:id="mutableLabel" text="Error!" GridPane.rowIndex="5" />
-                  <TextField id="partIDField" fx:id="idField" GridPane.columnIndex="1" />
+                  <TextField id="partIDField" fx:id="idField" disable="true" text="Disabled" GridPane.columnIndex="1" />
                   <TextField id="partNameField" fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField id="partInvField" fx:id="invField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField id="partPriceField" fx:id="costField" GridPane.columnIndex="1" GridPane.rowIndex="3" />

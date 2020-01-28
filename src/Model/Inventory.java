@@ -10,6 +10,18 @@ public class Inventory {
     private static ObservableList<Part> allParts = FXCollections.observableArrayList();
     private static ObservableList<Product> allProducts = FXCollections.observableArrayList();
 
+    //Fields to hold ID numbers.
+    private static int partID = 90_000;
+    private static int productID = 80_000;
+
+    public static int genPartID() {
+        return ++partID;
+    }
+
+    public static int genProductID() {
+        return ++productID;
+    }
+
     /**
      * Fixme I think this needs to generate the ID number
      * @param newPart
@@ -151,48 +163,25 @@ public class Inventory {
      */
     public static void loadSampleData(){ //todo improve this test data
         //add InHouse objects
-        addPart(new InHouse(10, "ih0", 2.50, 14, 3, 20, 1234 ));
-        addPart(new InHouse(10, "ih1", 2.50, 14, 3, 20, 1234 ));
-        addPart(new InHouse(10, "ih2", 2.50, 14, 3, 20, 1234 ));
-        addPart(new InHouse(10, "ih3", 2.50, 14, 3, 20, 1234 ));
-        addPart(new InHouse(10, "ih4", 2.50, 14, 3, 20, 1234 ));
+        addPart(new InHouse(genPartID(), "ih0", 2.50, 14, 3, 20, 1234 ));
+        addPart(new InHouse(genPartID(), "ih1", 2.50, 14, 3, 20, 1234 ));
+        addPart(new InHouse(genPartID(), "ih2", 2.50, 14, 3, 20, 1234 ));
+        addPart(new InHouse(genPartID(), "ih3", 2.50, 14, 3, 20, 1234 ));
+        addPart(new InHouse(genPartID(), "ih4", 2.50, 14, 3, 20, 1234 ));
         //add OutSourced objects
-        addPart(new Outsourced(11, "OS0", 2.13, 12, 1, 200, "company1"));
-        addPart(new Outsourced(11, "OS1", 2.13, 12, 1, 200, "company1"));
-        addPart(new Outsourced(11, "OS2", 2.13, 12, 1, 200, "company1"));
-        addPart(new Outsourced(11, "OS3", 2.13, 12, 1, 200, "company1"));
-        addPart(new Outsourced(11, "OS4", 2.13, 12, 1, 200, "company1"));
+        addPart(new Outsourced(genPartID(), "OS0", 2.13, 12, 1, 200, "company1"));
+        addPart(new Outsourced(genPartID(), "OS1", 2.13, 12, 1, 200, "company1"));
+        addPart(new Outsourced(genPartID(), "OS2", 2.13, 12, 1, 200, "company1"));
+        addPart(new Outsourced(genPartID(), "OS3", 2.13, 12, 1, 200, "company1"));
+        addPart(new Outsourced(genPartID(), "OS4", 2.13, 12, 1, 200, "company1"));
         //add Products
-        addProduct(new Product(138, "prod0", 2.99, 100, 14, 201) );
-        addProduct(new Product(138, "prod1", 2.99, 100, 14, 201) );
-        addProduct(new Product(138, "prod2", 2.99, 100, 14, 201) );
-        addProduct(new Product(138, "prod3", 2.99, 100, 14, 201) );
-        addProduct(new Product(138, "prod4", 2.99, 100, 14, 201) );
+        addProduct(new Product(genProductID(), "prod0", 2.99, 100, 14, 201) );
+        addProduct(new Product(genProductID(), "prod1", 2.99, 100, 14, 201) );
+        addProduct(new Product(genProductID(), "prod2", 2.99, 100, 14, 201) );
+        addProduct(new Product(genProductID(), "prod3", 2.99, 100, 14, 201) );
+        addProduct(new Product(genProductID(), "prod4", 2.99, 100, 14, 201) );
     }
 
-    /**
-     * This should probably be removed before submission
-     */
-    public static void testerMethod() {
-        System.out.println("Starting method!");
-        System.out.println("Number of parts: " + allParts.size());
-        System.out.println("Number of products: " + allProducts.size());
-        addPart(new InHouse(10, "inhouse a1", 2.50, 14, 3, 20, 1234 ));
-        System.out.println("Attempted to add a part. new parts quantity: " + allParts.size());
-        addPart(new Outsourced(11, "outsourced b1", 2.13, 12, 1, 200, "company1"));
-        System.out.println("Number of products: " + allProducts.size());
-        System.out.println("added outsourced: " + allParts.size());
-        System.out.println(allParts.toString());
-        System.out.println( "testing lookUpPart(): " + lookUpPart(10));
-        updatePart(0, new Outsourced(838, "OSb2", 19.99, 13, 1, 500,
-                "company2"));
-        System.out.println("updated part0: " + allParts.toString());
-        deletePart(allParts.get(0));
-        System.out.println("Deleted part at index0: " + allParts.toString());
-
-        addProduct(new Product(138, "prodTaco", 2.99, 100, 14, 201) );
-
-    }
 
 
 }

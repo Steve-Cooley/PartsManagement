@@ -49,7 +49,7 @@ public class AddPartController implements Initializable {
     @FXML
     private void onSaveButton() {
         //System.out.println("add button pushed");
-        int id;
+        int id;  // fixme delete after proven safe to do so
         String partN;
         double cost;
         int inv;
@@ -59,7 +59,7 @@ public class AddPartController implements Initializable {
         String compN;
 
         if (inHouse.isSelected()) {
-            id = Integer.parseInt(idField.getText());
+            //id = Integer.parseInt(idField.getText());
             partN = nameField.getText();
             cost = Double.parseDouble(costField.getText());
             inv = Integer.parseInt(invField.getText());
@@ -67,17 +67,17 @@ public class AddPartController implements Initializable {
             max = Integer.parseInt(maxField.getText());
             machineID = Integer.parseInt(mutableField.getText());
 
-            Inventory.addPart(new InHouse(id, partN, cost, inv, min, max, machineID));
+            Inventory.addPart(new InHouse(Inventory.genPartID(), partN, cost, inv, min, max, machineID));
 
         } else {
-            id = Integer.parseInt(idField.getText());
+            //id = Integer.parseInt(idField.getText());
             partN = nameField.getText();
             cost = Double.parseDouble(costField.getText());
             inv = Integer.parseInt(invField.getText());
             min = Integer.parseInt(minField.getText());
             max = Integer.parseInt(maxField.getText());
             compN = idField.getText();
-            Inventory.addPart(new Outsourced(id,partN,cost,inv,min,max,compN));
+            Inventory.addPart(new Outsourced(Inventory.genPartID(),partN,cost,inv,min,max,compN));
         }
         cancelButton.fire();   //returns to main after finishing add
     }

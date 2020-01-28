@@ -1,6 +1,7 @@
 package View_Controller;
 
 import Model.InHouse;
+import Model.Inventory;
 import Model.Outsourced;
 import Model.Part;
 import javafx.event.ActionEvent;
@@ -23,12 +24,13 @@ import java.util.ResourceBundle;
 public class ModifyPartController implements Initializable {
 
     private static Part prt;
-
+    @FXML private TextField maxField;
+    @FXML private TextField minField;
     @FXML private TextField idField;
     @FXML private TextField nameField;
     @FXML private TextField invField;
     @FXML private TextField costField;
-    @FXML private TextField varField;
+    @FXML private TextField mutableField;
     @FXML private RadioButton inHouse;
     @FXML private RadioButton outSourced;
     @FXML private ToggleGroup inOutSourceToggleGroup;
@@ -53,13 +55,50 @@ public class ModifyPartController implements Initializable {
         invField.setText(Integer.toString(prt.getStock()));
         costField.setText(Double.toString(prt.getPrice()));
         System.out.println("class is: " + prt.getClass());
+        maxField.setText(Integer.toString(prt.getMax()));
+        minField.setText(Integer.toString(prt.getMin()));
         if (prt instanceof InHouse) {
-            varField.setText(Integer.toString(((InHouse) prt).getMachineID()));
+            mutableField.setText(Integer.toString(((InHouse) prt).getMachineID()));
         } else if(prt instanceof Outsourced) {
-            varField.setText(((Outsourced) prt).getCompanyName());
+            mutableField.setText(((Outsourced) prt).getCompanyName());
         } else {
             System.out.println("Couldn't Identify class of part"); //fixme this should never execute. delete before sub.
         }
+    }
+
+    @FXML
+    private void onSaveButton() {
+        int id;
+        String partN;
+        double cost;
+        int inv;
+        int min;
+        int max;
+        int machineID;
+        String compN;
+
+        if (inHouse.isSelected()) {
+            id = Integer.parseInt(idField.getText());
+            partN = nameField.getText();
+            cost = Double.parseDouble(costField.getText());
+            inv = Integer.parseInt(invField.getText());
+            min = Integer.parseInt(minField.getText());
+            max = Integer.parseInt(maxField.getText());
+            machineID = Integer.parseInt(mutableField.getText());
+
+            Inventory.addPart(new InHouse(Inventory.genPartID(), partN, cost, inv, min, max, machineID));
+
+        } else {
+            //id = Integer.parseInt(idField.getText());
+            partN = nameField.getText();
+            cost = Double.parseDouble(costField.getText());
+            inv = Integer.parseInt(invField.getText());
+            min = Integer.parseInt(minField.getText());
+            max = Integer.parseInt(maxField.getText());
+            compN = idField.getText();
+            Inventory.addPart(new Outsourced(Inventory.genPartID(),partN,cost,inv,min,max,compN));
+        }
+        cancelButton.fire();   //returns to main after finishing add
     }
 
     //This just receives "the pass"
