@@ -11,10 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,6 +21,7 @@ import java.util.ResourceBundle;
 public class ModifyPartController implements Initializable {
 
     private static Part prt;
+    @FXML private Button cancelButton;
     @FXML private TextField maxField;
     @FXML private TextField minField;
     @FXML private TextField idField;
@@ -64,6 +62,7 @@ public class ModifyPartController implements Initializable {
         } else {
             System.out.println("Couldn't Identify class of part"); //fixme this should never execute. delete before sub.
         }
+
     }
 
     @FXML
@@ -86,17 +85,18 @@ public class ModifyPartController implements Initializable {
             max = Integer.parseInt(maxField.getText());
             machineID = Integer.parseInt(mutableField.getText());
 
-            Inventory.addPart(new InHouse(Inventory.genPartID(), partN, cost, inv, min, max, machineID));
+            Inventory.modPart(new InHouse(id, partN, cost, inv, min, max, machineID));
 
         } else {
-            //id = Integer.parseInt(idField.getText());
+            id = Integer.parseInt(idField.getText());
             partN = nameField.getText();
             cost = Double.parseDouble(costField.getText());
             inv = Integer.parseInt(invField.getText());
             min = Integer.parseInt(minField.getText());
             max = Integer.parseInt(maxField.getText());
-            compN = idField.getText();
-            Inventory.addPart(new Outsourced(Inventory.genPartID(),partN,cost,inv,min,max,compN));
+            compN = mutableField.getText();
+            Inventory.modPart(new Outsourced(id,partN,cost,inv,min,max,compN));
+            System.out.println("in onsavebutton. compn should have changed. it is: " + compN);
         }
         cancelButton.fire();   //returns to main after finishing add
     }

@@ -22,6 +22,22 @@ public class Inventory {
         return ++productID;
     }
 
+    public static void modPart(Part modPart){
+        System.out.println("modPart is executing");
+        System.out.println("Object is type: " + modPart.getClass());
+        for (int i = 0; i < allParts.size(); ++i) {
+            if (allParts.get(i).getID() == modPart.getID()) {
+                allParts.remove(allParts.get(i));
+                allParts.add(modPart);
+            }
+        }
+        if (modPart instanceof InHouse) {
+            System.out.println("mac ID: " + ((InHouse) modPart).getMachineID());
+        } else if (modPart instanceof Outsourced) {
+            System.out.println("company name: " + ((Outsourced) modPart).getCompanyName());
+        }
+    }
+
     /**
      * Fixme I think this needs to generate the ID number
      * @param newPart
