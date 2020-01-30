@@ -65,7 +65,7 @@
             <TextField fx:id="searchBar" layoutX="630.0" layoutY="86.0" />
             <AnchorPane layoutX="403.0" layoutY="129.0" prefHeight="201.0" prefWidth="541.0">
                <children>
-                  <TableView prefHeight="160.0" prefWidth="541.0">
+                  <TableView fx:id="topTableV" prefHeight="160.0" prefWidth="541.0">
                     <columns>
                       <TableColumn fx:id="topIDTableCol" prefWidth="91.0" text="Part ID" />
                       <TableColumn fx:id="topPartNTableCol" prefWidth="143.0" text="Part Name" />
@@ -78,7 +78,7 @@
             </AnchorPane>
             <AnchorPane layoutX="403.0" layoutY="341.0" prefHeight="201.0" prefWidth="541.0">
                <children>
-                  <TableView prefHeight="160.0" prefWidth="541.0">
+                  <TableView fx:id="botTableV" prefHeight="160.0" prefWidth="541.0">
                      <columns>
                         <TableColumn fx:id="botPartIDTableCol" prefWidth="75.0" text="Part ID" />
                         <TableColumn fx:id="botNameTableCol" prefWidth="161.0" text="Part Name" />
