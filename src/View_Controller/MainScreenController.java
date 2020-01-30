@@ -64,7 +64,17 @@ public class MainScreenController implements Initializable {
 
     @FXML
     private void partsSearch() {
-
+        String s = partsSearchField.getText();
+        System.out.println(s);
+        Part prt;
+        //System.out.println(Inventory.getAllParts());
+        for (Part p : Inventory.getAllParts()) {
+            if (p.getID() == Integer.parseInt(s)) {
+                prt =  p;
+                //System.out.println("prt = : " + prt);
+                break;
+            }
+        }
     }
 
     @FXML

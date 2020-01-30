@@ -29,7 +29,7 @@
                     </columns>
                   </TableView>
                   <Label layoutX="40.0" layoutY="42.0" text="Parts" />
-                  <Button id="partsSearchButton" fx:id="partsSearchButton" layoutX="232.0" layoutY="37.0" mnemonicParsing="false" text="Search" />
+                  <Button id="partsSearchButton" fx:id="partsSearchButton" layoutX="232.0" layoutY="37.0" mnemonicParsing="false" onAction="#partsSearch" text="Search" />
                   <TextField id="partsSearchBar" fx:id="partsSearchField" layoutX="308.0" layoutY="37.0" />
                   <ButtonBar layoutX="156.0" layoutY="408.0" prefHeight="40.0" prefWidth="239.0">
                     <buttons>
