@@ -73,7 +73,7 @@ public class Inventory {
      */
     public static Product lookUpProduct(int productID) {
         for(int i = 0; i < allProducts.size(); ++i){
-            if(allProducts.get(i).getId() == productID) {
+            if(allProducts.get(i).getID() == productID) {
                 return allProducts.get(i);
             }
         }

@@ -45,7 +45,7 @@ public class Product {
         this.associatedParts = associatedParts;
     }
 
-    public int getId() {
+    public int getID() {
         return id.get();
     }
 

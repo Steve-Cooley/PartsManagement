@@ -43,6 +43,9 @@ public class AddProductController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         //
         System.out.println("Initialize is running!");
+        //set up all parts table (top)
+
+        //set component parts table (bottom)
     }
 
     public void toMainScene(ActionEvent event) throws IOException {

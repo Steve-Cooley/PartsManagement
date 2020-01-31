@@ -14,7 +14,7 @@
       <AnchorPane prefHeight="566.0" prefWidth="681.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button id="cancelButton" fx:id="cancelButton" layoutX="499.0" layoutY="551.0" mnemonicParsing="false" onAction="#toMainScene" text="Cancel" />
-            <Label id="addPartLabel" layoutX="34.0" layoutY="29.0" text="Modify Model.Part" />
+            <Label id="addPartLabel" layoutX="34.0" layoutY="29.0" text="Modify Model" />
             <RadioButton id="inHouseRadioButton" fx:id="inHouse" layoutX="195.0" layoutY="28.0" mnemonicParsing="false" onAction="#radioButtonChange" text="In-House" />
             <RadioButton id="outsourcedRadioButton" fx:id="outSourced" layoutX="332.0" layoutY="28.0" mnemonicParsing="false" onAction="#radioButtonChange" text="Outsourced" />
             <GridPane layoutX="53.0" layoutY="89.0" prefHeight="402.0" prefWidth="469.0">

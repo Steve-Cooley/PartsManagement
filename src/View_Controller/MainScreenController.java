@@ -8,6 +8,8 @@ import Model.Inventory;
 import Model.Part;
 import Model.Product;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +30,8 @@ import java.util.ResourceBundle;
 
 public class MainScreenController implements Initializable {
 
+    @FXML TextField prodSearchField;
+    @FXML Button prodSearchButton;
     @FXML private Button partsSearchButton;
     @FXML private TextField partsSearchField;
     @FXML private Button delButton;
@@ -42,8 +46,6 @@ public class MainScreenController implements Initializable {
     @FXML private TableColumn prodNameCol;
     @FXML private TableColumn prodInvCol;
     @FXML private TableColumn prodCostCol;
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -62,18 +64,59 @@ public class MainScreenController implements Initializable {
 
     }
 
+        @FXML
+    private void productsSearch() {
+        System.out.println("the products search button was executed");
+        String s = prodSearchField.getText();
+        ObservableList filtered = FXCollections.observableArrayList();
+        System.out.println(s);
+        //First test if search string is empty, if so table should be full. if not, fill with filtered array
+        if (!s.equals("")) {
+            for (Product p : Inventory.getAllProducts()) {
+                //get ID number of Product, convert to String, see if it contains search string, assign to TableView
+                if (Integer.toString(p.getID()).contains(s)) {
+                    Product prt;
+                    prt = p;
+                    filtered.add(prt);
+                } else if (p.getName().contains(s)) {
+                    Product prt;
+                    prt = p;
+                    filtered.add(prt);
+                }
+            }
+            productsTable.setItems(filtered);
+        } else {
+            productsTable.setItems(Inventory.getAllProducts());
+        }
+    }
+
+    /**
+     * This method seems to work best with Strings
+     * PartsTable takes an ObservableArrayList as a parameter
+     */
     @FXML
     private void partsSearch() {
+        System.out.println("the parts search button was executed");  //todo remove
         String s = partsSearchField.getText();
+        ObservableList filtered = FXCollections.observableArrayList();
         System.out.println(s);
-        Part prt;
-        //System.out.println(Inventory.getAllParts());
-        for (Part p : Inventory.getAllParts()) {
-            if (p.getID() == Integer.parseInt(s)) {
-                prt =  p;
-                //System.out.println("prt = : " + prt);
-                break;
+        //First test if search string is empty, if so table should be full. if not, fill with filtered array
+        if (!s.equals("")) {
+            for (Part p : Inventory.getAllParts()) {
+                //get ID number of Part, convert to String, see if it contains search string, assign to TableView
+                if (Integer.toString(p.getID()).contains(s)) {
+                    Part prt;
+                    prt = p;
+                    filtered.add(prt);
+                } else if (p.getName().contains(s)) {
+                    Part prt;
+                    prt = p;
+                    filtered.add(prt);
+                }
             }
+            partsTable.setItems(filtered);
+        } else {
+            partsTable.setItems(Inventory.getAllParts());
         }
     }
 
@@ -112,6 +155,7 @@ public class MainScreenController implements Initializable {
 
     @FXML
     public void toModifyPartScreen(ActionEvent event) throws IOException {
+
         //Part p = partsTable.getSelectionModel().getSelectedItem();
 
         //send in Part object
@@ -122,7 +166,6 @@ public class MainScreenController implements Initializable {
 
         //Get Stage info
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
         window.setScene(addPartScene);
         window.show();
     }
