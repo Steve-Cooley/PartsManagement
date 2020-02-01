@@ -18,7 +18,7 @@
             <Label id="titleLabel" layoutX="34.0" layoutY="32.0" text="Add Product" />
             <ButtonBar layoutX="722.0" layoutY="592.0" prefHeight="40.0" prefWidth="200.0">
                <buttons>
-                  <Button fx:id="saveButton" mnemonicParsing="false" text="Save" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#onSaveButton" text="Save" />
                 <Button id="cancel" fx:id="cancelButton" mnemonicParsing="false" onAction="#toMainScene" text="cancel" />
                </buttons>
             </ButtonBar>
@@ -73,7 +73,7 @@
                         <TableColumn fx:id="topPriceTableCol" prefWidth="176.0" text="Price Per Unit" />
                     </columns>
                   </TableView>
-                  <Button layoutX="443.0" layoutY="168.0" mnemonicParsing="false" text="Add" />
+                  <Button fx:id="addButton" layoutX="443.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#onAddButton" text="Add" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="403.0" layoutY="341.0" prefHeight="201.0" prefWidth="541.0">

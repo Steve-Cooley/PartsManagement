@@ -117,15 +117,17 @@ public class Product {
         this.max.set(max);
     }
 
-    public void addAssociatedPart(Part part) { //fixme
+    public void addAssociatedPart(Part part) {
         //
+        associatedParts.add(part);
 
-    } //fixme
+    }
 
     public boolean deleteAssociatedPart(Part selectedAsPart){
         return true; //fixme
     }
 
-    //public ObservableList<Part> getAllAssociatedParts() { //fixme
-    // }
+    public ObservableList<Part> getAllAssociatedParts() {
+        return this.associatedParts;
+    }
 }

@@ -48,8 +48,6 @@ public class AddPartController implements Initializable {
 
     @FXML
     private void onSaveButton() {
-        //System.out.println("add button pushed");
-        int id;  // fixme delete after proven safe to do so
         String partN;
         double cost;
         int inv;
@@ -59,7 +57,6 @@ public class AddPartController implements Initializable {
         String compN;
 
         if (inHouse.isSelected()) {
-            //id = Integer.parseInt(idField.getText());
             partN = nameField.getText();
             cost = Double.parseDouble(costField.getText());
             inv = Integer.parseInt(invField.getText());
@@ -70,7 +67,6 @@ public class AddPartController implements Initializable {
             Inventory.addPart(new InHouse(Inventory.genPartID(), partN, cost, inv, min, max, machineID));
 
         } else {
-            //id = Integer.parseInt(idField.getText());
             partN = nameField.getText();
             cost = Double.parseDouble(costField.getText());
             inv = Integer.parseInt(invField.getText());

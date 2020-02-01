@@ -37,15 +37,15 @@ public class MainScreenController implements Initializable {
     @FXML private Button delButton;
     @FXML private Button exitButton;
     @FXML private TableView<Part> partsTable;
-    @FXML private TableColumn partIDCol;
-    @FXML private TableColumn partNameCol;
-    @FXML private TableColumn partInvCol;
-    @FXML private TableColumn partCostCol;
+    @FXML private TableColumn<TableView<Part>, Part> partIDCol;
+    @FXML private TableColumn<TableView<Part>, Part> partNameCol;
+    @FXML private TableColumn<TableView<Part>, Part> partInvCol;
+    @FXML private TableColumn<TableView<Part>, Part> partCostCol;
     @FXML private TableView<Product> productsTable;     //typing may cause trouble. Pay attention!
-    @FXML private TableColumn prodIDCol;
-    @FXML private TableColumn prodNameCol;
-    @FXML private TableColumn prodInvCol;
-    @FXML private TableColumn prodCostCol;
+    @FXML private TableColumn<TableView<Part>, Part> prodIDCol;
+    @FXML private TableColumn<TableView<Part>, Part> prodNameCol;
+    @FXML private TableColumn<TableView<Part>, Part> prodInvCol;
+    @FXML private TableColumn<TableView<Part>, Part> prodCostCol;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

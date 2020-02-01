@@ -57,8 +57,12 @@ public class ModifyPartController implements Initializable {
         minField.setText(Integer.toString(prt.getMin()));
         if (prt instanceof InHouse) {
             mutableField.setText(Integer.toString(((InHouse) prt).getMachineID()));
+            mutableLabel.setText("Machine ID");
+            inHouse.setSelected(true);
         } else if(prt instanceof Outsourced) {
             mutableField.setText(((Outsourced) prt).getCompanyName());
+            mutableLabel.setText("Company Name");
+            outSourced.setSelected(true);
         } else {
             System.out.println("Couldn't Identify class of part"); //fixme this should never execute. delete before sub.
         }
