@@ -39,7 +39,7 @@
                   <Label text="Name" GridPane.rowIndex="1" />
                   <Label text="Inv" GridPane.rowIndex="2" />
                   <Label text="Price" GridPane.rowIndex="3" />
-                  <TextField fx:id="idField" GridPane.columnIndex="1" />
+                  <TextField fx:id="idField" disable="true" GridPane.columnIndex="1" />
                   <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <AnchorPane prefHeight="200.0" prefWidth="218.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
@@ -61,8 +61,8 @@
                   </AnchorPane>
                </children>
             </GridPane>
-            <Button fx:id="searchButton" layoutX="547.0" layoutY="86.0" mnemonicParsing="false" text="Search" />
-            <TextField fx:id="searchBar" layoutX="630.0" layoutY="86.0" />
+            <Button fx:id="searchButton" layoutX="547.0" layoutY="86.0" mnemonicParsing="false" onMouseClicked="#onSearchButton" text="Search" />
+            <TextField fx:id="searchField" layoutX="630.0" layoutY="86.0" />
             <AnchorPane layoutX="403.0" layoutY="129.0" prefHeight="201.0" prefWidth="541.0">
                <children>
                   <TableView fx:id="topTableV" prefHeight="160.0" prefWidth="541.0">

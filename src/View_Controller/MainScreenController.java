@@ -105,12 +105,12 @@ public class MainScreenController implements Initializable {
             for (Part p : Inventory.getAllParts()) {
                 //get ID number of Part, convert to String, see if it contains search string, assign to TableView
                 if (Integer.toString(p.getID()).contains(s)) {
-                    Part prt;
-                    prt = p;
+                    Part prt = p;
+                    //prt = p;
                     filtered.add(prt);
                 } else if (p.getName().contains(s)) {
-                    Part prt;
-                    prt = p;
+                    Part prt = p;
+                    //prt = p;
                     filtered.add(prt);
                 }
             }

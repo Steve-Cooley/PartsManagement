@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 
 public class AddProductController implements Initializable {
 
-    private Product newProd = new Product(1, "temp", 1.3, 1,2,3);
+    private Product newProd = new Product(Inventory.genProductID(), "temp", 1.3, 1,2,3);
     //ObservableList tempOL = FXCollections.observableArrayList();
     @FXML private TableView<Part> topTableV;
     @FXML private Button delButton;
@@ -38,7 +38,7 @@ public class AddProductController implements Initializable {
     @FXML private Label minLabel;
     @FXML private TextField minField;
     @FXML private Button searchButton;
-    @FXML private TextField searchBar;
+    @FXML private TextField searchField;
     @FXML private TableColumn<TableView<Part>, Part> topIDTableCol;
     @FXML private TableColumn<TableView<Part>, Part> topPartNTableCol;
     @FXML private TableColumn<TableView<Part>, Part> topInvTableCOl;
@@ -64,9 +64,33 @@ public class AddProductController implements Initializable {
         botNameTableCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         botInvTableCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
         botPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+        //set ID field
+        idField.setText(Integer.toString(newProd.getID()));
     }
 
-
+    @FXML
+    private void onSearchButton() {
+        //test
+        System.out.println("The search button has been pressed");
+        String s = searchField.getText();
+        ObservableList filtered = FXCollections.observableArrayList();
+        if (!s.equals("")) {
+            for (Part p : Inventory.getAllParts()) {
+                if ( Integer.toString(p.getID()).contains(s)) {
+                    Part prt = p;
+                    //prt = p;
+                    filtered.add(prt);
+                } else if (p.getName().contains(s)) {
+                    Part prt = p;
+                    //prt = p;
+                    filtered.add(prt);
+                }
+            }
+            topTableV.setItems(filtered);
+        } else {
+            topTableV.setItems(Inventory.getAllParts());
+        }
+    }
 
     @FXML
     private void onSaveButton() {
