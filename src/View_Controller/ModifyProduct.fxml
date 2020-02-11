@@ -18,8 +18,8 @@
             <Label id="titleLabel" layoutX="34.0" layoutY="32.0" text="Modify Product" />
             <ButtonBar layoutX="722.0" layoutY="592.0" prefHeight="40.0" prefWidth="200.0">
                <buttons>
-                  <Button mnemonicParsing="false" text="Save" />
-                <Button id="cancel" mnemonicParsing="false" onAction="#toMainScene" text="cancel" />
+                  <Button fx:id="saveButton" mnemonicParsing="false" onMouseClicked="#onSaveButton" text="Save" />
+                <Button id="cancel" fx:id="cancelButton" mnemonicParsing="false" onAction="#toMainScene" text="cancel" />
                </buttons>
             </ButtonBar>
             <GridPane layoutX="34.0" layoutY="159.0" prefHeight="334.0" prefWidth="302.0">
@@ -39,7 +39,7 @@
                   <Label text="Name" GridPane.rowIndex="1" />
                   <Label text="Inv" GridPane.rowIndex="2" />
                   <Label text="Price" GridPane.rowIndex="3" />
-                  <TextField fx:id="idField" GridPane.columnIndex="1" />
+                  <TextField fx:id="idField" disable="true" GridPane.columnIndex="1" />
                   <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <AnchorPane prefHeight="200.0" prefWidth="218.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
@@ -61,7 +61,7 @@
                   </AnchorPane>
                </children>
             </GridPane>
-            <Button fx:id="searchButton" layoutX="557.0" layoutY="86.0" mnemonicParsing="false" text="Search" />
+            <Button fx:id="searchButton" layoutX="557.0" layoutY="86.0" mnemonicParsing="false" onMouseClicked="#onSearchButton" text="Search" />
             <TextField fx:id="searchField" layoutX="637.0" layoutY="86.0" />
             <AnchorPane layoutX="403.0" layoutY="129.0" prefHeight="201.0" prefWidth="541.0">
                <children>
@@ -73,7 +73,7 @@
                         <TableColumn fx:id="topPriceCol" prefWidth="135.0" text="Price Per Unit" />
                     </columns>
                   </TableView>
-                  <Button layoutX="443.0" layoutY="168.0" mnemonicParsing="false" text="Button" />
+                  <Button fx:id="addButton" layoutX="443.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#onAddButton" text="Add" />
                </children>
             </AnchorPane>
             <AnchorPane layoutX="403.0" layoutY="341.0" prefHeight="201.0" prefWidth="541.0">
@@ -86,7 +86,7 @@
                         <TableColumn fx:id="botPriceCol" prefWidth="134.0" text="Price Per Unit" />
                      </columns>
                   </TableView>
-                  <Button layoutX="443.0" layoutY="168.0" mnemonicParsing="false" text="Button" />
+                  <Button fx:id="delButton" layoutX="443.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#onDelButton" text="Delete" />
                </children>
             </AnchorPane>
          </children>

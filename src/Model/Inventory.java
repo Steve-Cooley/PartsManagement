@@ -22,6 +22,16 @@ public class Inventory {
         return ++productID;
     }
 
+    public static void modProduct(Product modProd) {
+        System.out.print("modProd is running"); //fixme delete
+        for (int i=0; i < allProducts.size(); ++i) {
+            if(allProducts.get(i).getID() == modProd.getID()) {
+                allProducts.remove(allProducts.get(i));
+                allProducts.add(modProd);
+            }
+        }
+    }
+
     public static void modPart(Part modPart){
         System.out.println("modPart is executing");
         System.out.println("Object is type: " + modPart.getClass());
@@ -31,15 +41,10 @@ public class Inventory {
                 allParts.add(modPart);
             }
         }
-        if (modPart instanceof InHouse) {
-            System.out.println("mac ID: " + ((InHouse) modPart).getMachineID());
-        } else if (modPart instanceof Outsourced) {
-            System.out.println("company name: " + ((Outsourced) modPart).getCompanyName());
-        }
     }
 
     /**
-     * Fixme I think this needs to generate the ID number
+     *
      * @param newPart
      */
     public static void addPart(Part newPart) {

@@ -75,12 +75,10 @@ public class MainScreenController implements Initializable {
             for (Product p : Inventory.getAllProducts()) {
                 //get ID number of Product, convert to String, see if it contains search string, assign to TableView
                 if (Integer.toString(p.getID()).contains(s)) {
-                    Product prt;
-                    prt = p;
+                    Product prt = p;
                     filtered.add(prt);
                 } else if (p.getName().contains(s)) {
-                    Product prt;
-                    prt = p;
+                    Product prt = p;
                     filtered.add(prt);
                 }
             }
@@ -155,9 +153,6 @@ public class MainScreenController implements Initializable {
 
     @FXML
     public void toModifyPartScreen(ActionEvent event) throws IOException {
-
-        //Part p = partsTable.getSelectionModel().getSelectedItem();
-
         //send in Part object
         ModifyPartController.setPrt(partsTable.getSelectionModel().getSelectedItem());
 
@@ -185,7 +180,7 @@ public class MainScreenController implements Initializable {
     @FXML
     public void toModifyProductScreen(ActionEvent event) throws IOException {
         //send in Part object  //fixme alter to fit product instead of part
-        //ModifyPartController.setPrt(partsTable.getSelectionModel().getSelectedItem());
+        ModifyProductController.setPrd(productsTable.getSelectionModel().getSelectedItem());
         //
         Parent addPartParent = FXMLLoader.load(getClass().getResource("ModifyProduct.fxml"));
         Scene addPartScene = new Scene(addPartParent);

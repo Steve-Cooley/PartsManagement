@@ -52,7 +52,7 @@ public class AddProductController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         //Product newProd = new Product();
         System.out.println("Initialize is running!");
-        //set up all parts table (top)
+        //set up allParts table (top)
         topTableV.setItems(Inventory.getAllParts());
         topIDTableCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         topPartNTableCol.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -69,6 +69,14 @@ public class AddProductController implements Initializable {
     }
 
     @FXML
+    private void onDelButton() {
+        //test
+        System.out.println("Del button pressed");
+        // This is shorter than the version in main scene fixme
+        newProd.deleteAssociatedPart(botTableV.getSelectionModel().getSelectedItem());
+    }
+
+    @FXML
     private void onSearchButton() {
         //test
         System.out.println("The search button has been pressed");
@@ -78,11 +86,9 @@ public class AddProductController implements Initializable {
             for (Part p : Inventory.getAllParts()) {
                 if ( Integer.toString(p.getID()).contains(s)) {
                     Part prt = p;
-                    //prt = p;
                     filtered.add(prt);
                 } else if (p.getName().contains(s)) {
                     Part prt = p;
-                    //prt = p;
                     filtered.add(prt);
                 }
             }

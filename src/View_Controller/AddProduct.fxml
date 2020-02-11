@@ -86,7 +86,7 @@
                         <TableColumn fx:id="botPriceCol" prefWidth="167.0" text="Price Per Unit" />
                      </columns>
                   </TableView>
-                  <Button fx:id="delButton" layoutX="443.0" layoutY="168.0" mnemonicParsing="false" text="Delete" />
+                  <Button fx:id="delButton" layoutX="443.0" layoutY="168.0" mnemonicParsing="false" onMouseClicked="#onDelButton" text="Delete" />
                </children>
             </AnchorPane>
          </children>
