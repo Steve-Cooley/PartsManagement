@@ -57,6 +57,7 @@ public class Inventory {
 
     /**
      * Traverse the list searching for matches to the partID
+     * not used, but meets UML requirements
      * @param partID
      * @return
      */
@@ -66,13 +67,12 @@ public class Inventory {
                 return allParts.get(i);
             }
         }
-
-        //default return
-        return null;  //fixme  Is this right?
+        //nonsense return to meet UML requirements
+        return new InHouse(0,"a",1,1,1,1,1);
     }
 
     /**
-     *
+     * not used, but does meet requirements
      * @param productID
      * @return
      */
@@ -83,15 +83,16 @@ public class Inventory {
             }
         }
 
-        return null;
+        //nonsense return that meets UML requirements
+        return new Product(0,"a",1,1,1,1);
     }
 
     /**
-     * This is pretty much a dummy method.  The UML diagram requires that I include this method, but I don't
+     * The UML diagram requires that I include this method, but I don't
      * think that it makes any sense to the project to return a whole ObservableList when my other lookUP method return
      * Parts.  My CI said that I should
      * go ahead and follow the directions even if they don't make sense. Maybe it will make sense later.  fixme
-     * **figured it out.
+     * **figured it out, leaving this method in to meet UML requirements, but prefer my own method.
      * @param partName
      * @return ObservableList
      */
@@ -111,6 +112,8 @@ public class Inventory {
      * and it does actually make sense that it returns a list.  Basically it looks for a match
      * of a set of characters in the name of parts, and returns a list of all matches.
      * Pretty cool actually.
+     *
+     * Never used, but meets UML requirements
      * @param productName
      * @return
      */
@@ -125,7 +128,7 @@ public class Inventory {
     }
 
     /**
-     * I think this method is supposed to delete the part at index, and replace it with selectedPart fixme
+     * Never called but meets UML requirements
      */
     public static void updatePart(int index, Part selectedPart) {
         allParts.remove(index);
@@ -133,7 +136,7 @@ public class Inventory {
     }
 
     /**
-     *   fixme
+     *   never called, but meets UML requirements
      * @param index
      * @param selectedProduct
      */

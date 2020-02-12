@@ -99,6 +99,7 @@ public class ModifyPartController implements Initializable {
                 machineID = Integer.parseInt(mutableField.getText());
 
                 Inventory.modPart(new InHouse(id, partN, cost, inv, min, max, machineID));
+                //Inventory.updatePart(id,new InHouse(id, partN, cost, inv, min, max, machineID) );
 
             } else {
                 id = Integer.parseInt(idField.getText());
