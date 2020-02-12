@@ -56,7 +56,7 @@ public class Inventory {
     }
 
     /**
-     * Traverse the list searching for matches to the partID? fixme
+     * Traverse the list searching for matches to the partID
      * @param partID
      * @return
      */
