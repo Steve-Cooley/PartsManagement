@@ -12,10 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -109,15 +106,26 @@ public class ModifyProductController implements Initializable {
 
     @FXML
     private void onSaveButton() {
-        //save changes
-        prd.setName(nameField.getText());
-        prd.setStock(Integer.parseInt(invField.getText()));
-        prd.setPrice(Double.parseDouble(priceField.getText()));
-        prd.setMax(Integer.parseInt(maxField.getText()));
-        prd.setMin(Integer.parseInt(minField.getText()));
-        Inventory.modProduct(prd);
-        //return to main screen
-        cancelButton.fire();
+        //send error if min>max
+        int min = Integer.parseInt(minField.getText());
+        int max = Integer.parseInt(maxField.getText());
+        if (min > max) {
+            //
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog (minMax)");
+            alert.setContentText("min must not be greater than max");
+            alert.showAndWait();
+        } else {
+            //save changes
+            prd.setName(nameField.getText());
+            prd.setStock(Integer.parseInt(invField.getText()));
+            prd.setPrice(Double.parseDouble(priceField.getText()));
+            prd.setMax(Integer.parseInt(maxField.getText()));
+            prd.setMin(Integer.parseInt(minField.getText()));
+            Inventory.modProduct(prd);
+            //return to main screen
+            cancelButton.fire();
+        }
     }
 
     @FXML void onAddButton() {

@@ -55,27 +55,37 @@ public class AddPartController implements Initializable {
         int max;
         int machineID;
         String compN;
+        //send error if min>max
+        min = Integer.parseInt(minField.getText());
+        max = Integer.parseInt(maxField.getText());
+        if (min > max) {
+            //
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog (minMax)");
+            alert.setContentText("min must not be greater than max");
+            alert.showAndWait();
+        }else {
+            if (inHouse.isSelected()) {
+                partN = nameField.getText();
+                cost = Double.parseDouble(costField.getText());
+                inv = Integer.parseInt(invField.getText());
+                min = Integer.parseInt(minField.getText());
+                max = Integer.parseInt(maxField.getText());
+                machineID = Integer.parseInt(mutableField.getText());
 
-        if (inHouse.isSelected()) {
-            partN = nameField.getText();
-            cost = Double.parseDouble(costField.getText());
-            inv = Integer.parseInt(invField.getText());
-            min = Integer.parseInt(minField.getText());
-            max = Integer.parseInt(maxField.getText());
-            machineID = Integer.parseInt(mutableField.getText());
+                Inventory.addPart(new InHouse(Inventory.genPartID(), partN, cost, inv, min, max, machineID));
 
-            Inventory.addPart(new InHouse(Inventory.genPartID(), partN, cost, inv, min, max, machineID));
-
-        } else {
-            partN = nameField.getText();
-            cost = Double.parseDouble(costField.getText());
-            inv = Integer.parseInt(invField.getText());
-            min = Integer.parseInt(minField.getText());
-            max = Integer.parseInt(maxField.getText());
-            compN = idField.getText();
-            Inventory.addPart(new Outsourced(Inventory.genPartID(),partN,cost,inv,min,max,compN));
+            } else {
+                partN = nameField.getText();
+                cost = Double.parseDouble(costField.getText());
+                inv = Integer.parseInt(invField.getText());
+                min = Integer.parseInt(minField.getText());
+                max = Integer.parseInt(maxField.getText());
+                compN = idField.getText();
+                Inventory.addPart(new Outsourced(Inventory.genPartID(), partN, cost, inv, min, max, compN));
+            }
+            cancelButton.fire();   //returns to main after finishing add
         }
-        cancelButton.fire();   //returns to main after finishing add
     }
 
     public void toMainScene(ActionEvent event) throws IOException {

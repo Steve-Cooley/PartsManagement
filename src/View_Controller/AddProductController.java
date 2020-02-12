@@ -101,14 +101,25 @@ public class AddProductController implements Initializable {
     @FXML
     private void onSaveButton() {
         System.out.println("save button pushed");
-        newProd.setId(Inventory.genProductID());
-        newProd.setName(nameField.getText());
-        newProd.setStock(Integer.parseInt(invField.getText()));
-        newProd.setPrice(Double.parseDouble(priceField.getText()));
-        newProd.setMax(Integer.parseInt(maxField.getText()));
-        newProd.setMin(Integer.parseInt(minField.getText()));
-        Inventory.addProduct(newProd);
-        cancelButton.fire();
+        //send error if min>max
+        int min = Integer.parseInt(minField.getText());
+        int max = Integer.parseInt(maxField.getText());
+        if (min > max) {
+            //
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog (minMax)");
+            alert.setContentText("min must not be greater than max");
+            alert.showAndWait();
+        } else {
+            newProd.setId(Inventory.genProductID());
+            newProd.setName(nameField.getText());
+            newProd.setStock(Integer.parseInt(invField.getText()));
+            newProd.setPrice(Double.parseDouble(priceField.getText()));
+            newProd.setMax(Integer.parseInt(maxField.getText()));
+            newProd.setMin(Integer.parseInt(minField.getText()));
+            Inventory.addProduct(newProd);
+            cancelButton.fire();
+        }
     }
 
     @FXML

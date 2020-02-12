@@ -79,30 +79,40 @@ public class ModifyPartController implements Initializable {
         int max;
         int machineID;
         String compN;
-
-        if (inHouse.isSelected()) {
-            id = Integer.parseInt(idField.getText());
-            partN = nameField.getText();
-            cost = Double.parseDouble(costField.getText());
-            inv = Integer.parseInt(invField.getText());
-            min = Integer.parseInt(minField.getText());
-            max = Integer.parseInt(maxField.getText());
-            machineID = Integer.parseInt(mutableField.getText());
-
-            Inventory.modPart(new InHouse(id, partN, cost, inv, min, max, machineID));
-
+        //send error if min>max
+        min = Integer.parseInt(minField.getText());
+        max = Integer.parseInt(maxField.getText());
+        if (min > max) {
+            //
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error Dialog (minMax)");
+            alert.setContentText("min must not be greater than max");
+            alert.showAndWait();
         } else {
-            id = Integer.parseInt(idField.getText());
-            partN = nameField.getText();
-            cost = Double.parseDouble(costField.getText());
-            inv = Integer.parseInt(invField.getText());
-            min = Integer.parseInt(minField.getText());
-            max = Integer.parseInt(maxField.getText());
-            compN = mutableField.getText();
-            Inventory.modPart(new Outsourced(id,partN,cost,inv,min,max,compN));
-            System.out.println("in onsavebutton. compn should have changed. it is: " + compN);
+            if (inHouse.isSelected()) {
+                id = Integer.parseInt(idField.getText());
+                partN = nameField.getText();
+                cost = Double.parseDouble(costField.getText());
+                inv = Integer.parseInt(invField.getText());
+                min = Integer.parseInt(minField.getText());
+                max = Integer.parseInt(maxField.getText());
+                machineID = Integer.parseInt(mutableField.getText());
+
+                Inventory.modPart(new InHouse(id, partN, cost, inv, min, max, machineID));
+
+            } else {
+                id = Integer.parseInt(idField.getText());
+                partN = nameField.getText();
+                cost = Double.parseDouble(costField.getText());
+                inv = Integer.parseInt(invField.getText());
+                min = Integer.parseInt(minField.getText());
+                max = Integer.parseInt(maxField.getText());
+                compN = mutableField.getText();
+                Inventory.modPart(new Outsourced(id, partN, cost, inv, min, max, compN));
+                System.out.println("in onsavebutton. compn should have changed. it is: " + compN);
+            }
+            cancelButton.fire();   //returns to main after finishing add
         }
-        cancelButton.fire();   //returns to main after finishing add
     }
 
     //This just receives "the pass"
