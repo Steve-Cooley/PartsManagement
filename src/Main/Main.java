@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage mainStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("../View_Controller/MainScreen.fxml"));
-        mainStage.setTitle("Test");                                                      //fixme re-title?
+        mainStage.setTitle("Main Window");
         mainStage.setScene(new Scene(root, 1250,736));
         mainStage.show();
     }
@@ -25,4 +25,3 @@ public class Main extends Application {
         launch(args);
     }
 }
-//asdfas
