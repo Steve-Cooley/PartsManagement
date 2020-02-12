@@ -98,6 +98,15 @@ public class AddProductController implements Initializable {
         }
     }
 
+    private double addAllPartPrices() {
+        double outp = 0;
+        for (Part p : newProd.getAllAssociatedParts()) {
+            outp += p.getPrice();
+        }
+        return outp;
+    }
+
+
     @FXML
     private void onSaveButton() {
         System.out.println("save button pushed");

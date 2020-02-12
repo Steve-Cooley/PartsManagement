@@ -57,7 +57,7 @@ public class Inventory {
 
     /**
      * Traverse the list searching for matches to the partID
-     * not used, but meets UML requirements
+     * not used, but meets UML requirements.  I like my method better.
      * @param partID
      * @return
      */
@@ -67,8 +67,8 @@ public class Inventory {
                 return allParts.get(i);
             }
         }
-        //nonsense return to meet UML requirements
-        return new InHouse(0,"a",1,1,1,1,1);
+        //nonsense return, never executes
+        return new InHouse(0,"SomethingWentWrong",1,1,1,1,1);
     }
 
     /**
@@ -83,16 +83,12 @@ public class Inventory {
             }
         }
 
-        //nonsense return that meets UML requirements
-        return new Product(0,"a",1,1,1,1);
+        //nonsense return, never executes, meets requirements
+        return new Product(0,"SomethingWentWrong",1,1,1,1);
     }
 
     /**
-     * The UML diagram requires that I include this method, but I don't
-     * think that it makes any sense to the project to return a whole ObservableList when my other lookUP method return
-     * Parts.  My CI said that I should
-     * go ahead and follow the directions even if they don't make sense. Maybe it will make sense later.  fixme
-     * **figured it out, leaving this method in to meet UML requirements, but prefer my own method.
+     * Meets UML requirements, never used.
      * @param partName
      * @return ObservableList
      */
@@ -108,11 +104,6 @@ public class Inventory {
     }
 
     /**
-     * Edit:  OK, I've figured out what this method is for.  It's for use with a search feature
-     * and it does actually make sense that it returns a list.  Basically it looks for a match
-     * of a set of characters in the name of parts, and returns a list of all matches.
-     * Pretty cool actually.
-     *
      * Never used, but meets UML requirements
      * @param productName
      * @return
