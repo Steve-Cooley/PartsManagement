@@ -110,6 +110,20 @@ public class AddProductController implements Initializable {
     @FXML
     private void onSaveButton() {
         System.out.println("save button pushed");
+        //test if prices make sense
+        double prodPrice = Double.parseDouble(priceField.getText());
+        double partsPrice = addAllPartPrices();
+        System.out.println("the total cost of parts is: " +
+                partsPrice);  //fixme debugging code, remove
+        System.out.println("the cost of the product is: " + prodPrice);
+        if (prodPrice < partsPrice) {
+            System.out.println("cost of parts exceeds cost of product");
+            Alert costAlert = new Alert(Alert.AlertType.ERROR);
+            costAlert.setTitle("Cost Error");
+            costAlert.setContentText("Cost of product must be equal to or greater than cost of associated parts");
+            costAlert.showAndWait();
+            return;
+        }
         //send error if min>max
         int min = Integer.parseInt(minField.getText());
         int max = Integer.parseInt(maxField.getText());
@@ -123,7 +137,7 @@ public class AddProductController implements Initializable {
             newProd.setId(Inventory.genProductID());
             newProd.setName(nameField.getText());
             newProd.setStock(Integer.parseInt(invField.getText()));
-            newProd.setPrice(Double.parseDouble(priceField.getText()));
+            newProd.setPrice(Double.parseDouble(priceField.getText())); //could use price variable
             newProd.setMax(Integer.parseInt(maxField.getText()));
             newProd.setMin(Integer.parseInt(minField.getText()));
             Inventory.addProduct(newProd);
