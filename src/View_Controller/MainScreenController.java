@@ -65,10 +65,8 @@ public class MainScreenController implements Initializable {
 
         @FXML
     private void productsSearch() {
-        System.out.println("the products search button was executed");
         String s = prodSearchField.getText();
         ObservableList<Product> filtered = FXCollections.observableArrayList();
-        System.out.println(s);
         //First test if search string is empty, if so table should be full. if not, fill with filtered array
         if (!s.equals("")) {
             for (Product p : Inventory.getAllProducts()) {
@@ -91,10 +89,8 @@ public class MainScreenController implements Initializable {
      */
     @FXML
     private void partsSearch() {
-        System.out.println("the parts search button was executed");  //todo remove
         String s = partsSearchField.getText();
         ObservableList<Part> filtered = FXCollections.observableArrayList();
-        System.out.println(s);
         //First test if search string is empty, if so table should be full. if not, fill with filtered array
         if (!s.equals("")) {
             for (Part p : Inventory.getAllParts()) {

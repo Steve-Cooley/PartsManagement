@@ -79,7 +79,6 @@ public class ModifyProductController implements Initializable {
     @FXML
     private void onSearchButton() {
         //test
-        System.out.println("The search button has been pressed");
         String s = searchField.getText();
         ObservableList<Part> filtered = FXCollections.observableArrayList();
         if (!s.equals("")) {
@@ -145,7 +144,6 @@ public class ModifyProductController implements Initializable {
     //receive pass
     public static void setPrd(Product prd) {
         ModifyProductController.prd = prd;
-        System.out.println("the pass: " + prd);
     }
 
     public void toMainScene(ActionEvent event) throws IOException {
