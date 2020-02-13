@@ -59,7 +59,6 @@ public class AddPartController implements Initializable {
         min = Integer.parseInt(minField.getText());
         max = Integer.parseInt(maxField.getText());
         if (min > max) {
-            //
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error Dialog (minMax)");
             alert.setContentText("min must not be greater than max");
@@ -72,9 +71,7 @@ public class AddPartController implements Initializable {
                 min = Integer.parseInt(minField.getText());
                 max = Integer.parseInt(maxField.getText());
                 machineID = Integer.parseInt(mutableField.getText());
-
                 Inventory.addPart(new InHouse(Inventory.genPartID(), partN, cost, inv, min, max, machineID));
-
             } else {
                 partN = nameField.getText();
                 cost = Double.parseDouble(costField.getText());
@@ -84,17 +81,16 @@ public class AddPartController implements Initializable {
                 compN = idField.getText();
                 Inventory.addPart(new Outsourced(Inventory.genPartID(), partN, cost, inv, min, max, compN));
             }
-            cancelButton.fire();   //returns to main after finishing add
+            //return to main
+            cancelButton.fire();
         }
     }
 
     public void toMainScene(ActionEvent event) throws IOException {
         Parent addPartParent = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         Scene addPartScene = new Scene(addPartParent);
-
         //Get Stage info
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
         window.setScene(addPartScene);
         window.show();
     }

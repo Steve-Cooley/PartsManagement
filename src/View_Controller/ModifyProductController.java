@@ -22,7 +22,6 @@ import java.util.ResourceBundle;
 
 public class ModifyProductController implements Initializable {
 
-
     private static Product prd;
     @FXML private Button cancelButton;
     @FXML private Button saveButton;
@@ -49,8 +48,6 @@ public class ModifyProductController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //test
-        System.out.println("prodmod init is running.");
         //use "the pass" to fill TableViews
         //set up allParts table (top)
         topTableV.setItems(Inventory.getAllParts());
@@ -76,9 +73,6 @@ public class ModifyProductController implements Initializable {
 
     @FXML
     private void onDelButton() {
-        //test
-        System.out.println("Del button pressed");
-        // This is shorter than the version in main scene fixme
         prd.deleteAssociatedPart(botTableV.getSelectionModel().getSelectedItem());
     }
 
@@ -87,15 +81,13 @@ public class ModifyProductController implements Initializable {
         //test
         System.out.println("The search button has been pressed");
         String s = searchField.getText();
-        ObservableList filtered = FXCollections.observableArrayList();
+        ObservableList<Part> filtered = FXCollections.observableArrayList();
         if (!s.equals("")) {
             for (Part p : Inventory.getAllParts()) {
                 if ( Integer.toString(p.getID()).contains(s)) {
-                    Part prt = p;
-                    filtered.add(prt);
+                    filtered.add(p);
                 } else if (p.getName().contains(s)) {
-                    Part prt = p;
-                    filtered.add(prt);
+                    filtered.add(p);
                 }
             }
             topTableV.setItems(filtered);
@@ -117,14 +109,10 @@ public class ModifyProductController implements Initializable {
         //test if prices make sense
         double prodPrice = Double.parseDouble(priceField.getText());
         double partsPrice = addAllPartPrices();
-        System.out.println("the total cost of parts is: " +
-                partsPrice);  //fixme debugging code, remove
-        System.out.println("the cost of the product is: " + prodPrice);
         if (prodPrice < partsPrice) {
-            System.out.println("cost of parts exceeds cost of product");
             Alert costAlert = new Alert(Alert.AlertType.ERROR);
             costAlert.setTitle("Cost Error");
-            costAlert.setContentText("Cost of product must be equal to or greater than cost of associated parts");
+            costAlert.setContentText("Cost of Parts exceeds cost of Product!");
             costAlert.showAndWait();
             return;
         }
@@ -161,13 +149,10 @@ public class ModifyProductController implements Initializable {
     }
 
     public void toMainScene(ActionEvent event) throws IOException {
-        //
         Parent addPartParent = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         Scene addPartScene = new Scene(addPartParent);
-
         //Get Stage info
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
         window.setScene(addPartScene);
         window.show();
     }

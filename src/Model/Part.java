@@ -4,13 +4,13 @@ import javafx.beans.property.*;
 
 public abstract class Part {
     private IntegerProperty id;
-    private SimpleStringProperty name;     //https://stackoverflow.com/questions/28060633/difference-between-simplestringproperty-and-stringproperty
+    private SimpleStringProperty name;
     private DoubleProperty price;
     private IntegerProperty stock;
     private IntegerProperty min;
     private IntegerProperty max;
 
-    public Part(int id, String name, double price, int stock, int min, int max){
+    public Part(int id, String name, double price, int stock, int min, int max) {
         this.id = new SimpleIntegerProperty(id);
         this.name = new SimpleStringProperty(name);
         this.price = new SimpleDoubleProperty(price);

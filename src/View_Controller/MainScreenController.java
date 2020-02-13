@@ -55,31 +55,28 @@ public class MainScreenController implements Initializable {
         partNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         partInvCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
         partCostCol.setCellValueFactory(new PropertyValueFactory<>("price"));
-
+        //set up products table
         productsTable.setItems(Inventory.getAllProducts());
         prodIDCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         prodNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         prodInvCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
         prodCostCol.setCellValueFactory(new PropertyValueFactory<>("price"));
-
     }
 
         @FXML
     private void productsSearch() {
         System.out.println("the products search button was executed");
         String s = prodSearchField.getText();
-        ObservableList filtered = FXCollections.observableArrayList();
+        ObservableList<Product> filtered = FXCollections.observableArrayList();
         System.out.println(s);
         //First test if search string is empty, if so table should be full. if not, fill with filtered array
         if (!s.equals("")) {
             for (Product p : Inventory.getAllProducts()) {
                 //get ID number of Product, convert to String, see if it contains search string, assign to TableView
                 if (Integer.toString(p.getID()).contains(s)) {
-                    Product prt = p;
-                    filtered.add(prt);
+                    filtered.add(p);
                 } else if (p.getName().contains(s)) {
-                    Product prt = p;
-                    filtered.add(prt);
+                    filtered.add(p);
                 }
             }
             productsTable.setItems(filtered);
@@ -96,20 +93,18 @@ public class MainScreenController implements Initializable {
     private void partsSearch() {
         System.out.println("the parts search button was executed");  //todo remove
         String s = partsSearchField.getText();
-        ObservableList filtered = FXCollections.observableArrayList();
+        ObservableList<Part> filtered = FXCollections.observableArrayList();
         System.out.println(s);
         //First test if search string is empty, if so table should be full. if not, fill with filtered array
         if (!s.equals("")) {
             for (Part p : Inventory.getAllParts()) {
                 //get ID number of Part, convert to String, see if it contains search string, assign to TableView
                 if (Integer.toString(p.getID()).contains(s)) {
-                    Part prt = p;
                     //prt = p;
-                    filtered.add(prt);
+                    filtered.add(p);
                 } else if (p.getName().contains(s)) {
-                    Part prt = p;
                     //prt = p;
-                    filtered.add(prt);
+                    filtered.add(p);
                 }
             }
             partsTable.setItems(filtered);
@@ -120,14 +115,12 @@ public class MainScreenController implements Initializable {
 
     @FXML
     private void delProductsButtonPressed() {
-        Product p = productsTable.getSelectionModel().getSelectedItem();
-        Inventory.deleteProduct(p);
+        Inventory.deleteProduct(productsTable.getSelectionModel().getSelectedItem());
     }
 
     @FXML
     private void delPartsButtonPressed() {
-        Part p = partsTable.getSelectionModel().getSelectedItem();
-        Inventory.deletePart(p);
+        Inventory.deletePart(partsTable.getSelectionModel().getSelectedItem());
     }
 
     @FXML
@@ -137,16 +130,13 @@ public class MainScreenController implements Initializable {
 
     /**
      * Method to change Scene to addPart
-     * fixme note to self, these methods show up in scenebuilder even without @FXML annotation
      */
     @FXML
     public void toAddPartScreen(ActionEvent event) throws IOException {
         Parent addPartParent = FXMLLoader.load(getClass().getResource("AddPart.fxml"));
         Scene addPartScene = new Scene(addPartParent);
-
         //Get Stage info
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
         window.setScene(addPartScene);
         window.show();
     }
@@ -155,10 +145,8 @@ public class MainScreenController implements Initializable {
     public void toModifyPartScreen(ActionEvent event) throws IOException {
         //send in Part object
         ModifyPartController.setPrt(partsTable.getSelectionModel().getSelectedItem());
-
         Parent addPartParent = FXMLLoader.load(getClass().getResource("ModifyPart.fxml"));
         Scene addPartScene = new Scene(addPartParent);
-
         //Get Stage info
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(addPartScene);
@@ -169,30 +157,21 @@ public class MainScreenController implements Initializable {
     public void toAddProductScreen(ActionEvent event) throws IOException {
         Parent addPartParent = FXMLLoader.load(getClass().getResource("AddProduct.fxml"));
         Scene addPartScene = new Scene(addPartParent);
-
         //Get Stage info
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
         window.setScene(addPartScene);
         window.show();
     }
 
     @FXML
     public void toModifyProductScreen(ActionEvent event) throws IOException {
-        //send in Part object  //fixme alter to fit product instead of part
+        //send in Product object
         ModifyProductController.setPrd(productsTable.getSelectionModel().getSelectedItem());
-        //
         Parent addPartParent = FXMLLoader.load(getClass().getResource("ModifyProduct.fxml"));
         Scene addPartScene = new Scene(addPartParent);
-
         //Get Stage info
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
         window.setScene(addPartScene);
         window.show();
     }
-
-
-
-
 }

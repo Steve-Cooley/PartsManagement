@@ -42,17 +42,13 @@ public class ModifyPartController implements Initializable {
         this.outSourced.setToggleGroup(inOutSourceToggleGroup);
         //set default
         this.inHouse.setSelected(true);
-
         //mutableLabel
         mutableLabel.setText("Machine ID");
-
         //set all fields based on the prt
-        System.out.println("The object passed in is: " + prt);
         idField.setText(Integer.toString(prt.getID()));
         nameField.setText(prt.getName());
         invField.setText(Integer.toString(prt.getStock()));
         costField.setText(Double.toString(prt.getPrice()));
-        System.out.println("class is: " + prt.getClass());
         maxField.setText(Integer.toString(prt.getMax()));
         minField.setText(Integer.toString(prt.getMin()));
         if (prt instanceof InHouse) {
@@ -63,10 +59,7 @@ public class ModifyPartController implements Initializable {
             mutableField.setText(((Outsourced) prt).getCompanyName());
             mutableLabel.setText("Company Name");
             outSourced.setSelected(true);
-        } else {
-            System.out.println("Couldn't Identify class of part"); //fixme this should never execute. delete before sub.
         }
-
     }
 
     @FXML
@@ -97,10 +90,7 @@ public class ModifyPartController implements Initializable {
                 min = Integer.parseInt(minField.getText());
                 max = Integer.parseInt(maxField.getText());
                 machineID = Integer.parseInt(mutableField.getText());
-
                 Inventory.modPart(new InHouse(id, partN, cost, inv, min, max, machineID));
-                //Inventory.updatePart(id,new InHouse(id, partN, cost, inv, min, max, machineID) );
-
             } else {
                 id = Integer.parseInt(idField.getText());
                 partN = nameField.getText();
@@ -110,7 +100,6 @@ public class ModifyPartController implements Initializable {
                 max = Integer.parseInt(maxField.getText());
                 compN = mutableField.getText();
                 Inventory.modPart(new Outsourced(id, partN, cost, inv, min, max, compN));
-                System.out.println("in onsavebutton. compn should have changed. it is: " + compN);
             }
             cancelButton.fire();   //returns to main after finishing add
         }
@@ -121,15 +110,11 @@ public class ModifyPartController implements Initializable {
         ModifyPartController.prt = prt;
     }
 
-
-
     public void toMainScene(ActionEvent event) throws IOException {
         Parent addPartParent = FXMLLoader.load(getClass().getResource("MainScreen.fxml"));
         Scene addPartScene = new Scene(addPartParent);
-
         //Get Stage info
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
         window.setScene(addPartScene);
         window.show();
     }

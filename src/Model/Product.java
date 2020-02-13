@@ -8,7 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Product {
-    private ObservableList<Part> associatedParts;  //I think that each product has a list of other associated prods
+    private ObservableList<Part> associatedParts;
     private SimpleIntegerProperty id;
     private SimpleStringProperty name;
     private SimpleDoubleProperty price;
@@ -123,7 +123,7 @@ public class Product {
 
     }
 
-    public boolean deleteAssociatedPart(Part selectedAsPart){
+    public boolean deleteAssociatedPart(Part selectedAsPart) {
         associatedParts.remove(selectedAsPart);
         return true; //fixme  Probably needs to test if part is removed
     }
