@@ -1,7 +1,3 @@
-// I think @FXML stuff goes here
-//I think that these controllers are supposed to have "initialize methods fixme initialize methods for all controllers
-//Yes, it turns out that they are supposed to have initialize methods, which is an override from initializable
-
 package View_Controller;
 
 import Model.Inventory;
