@@ -98,7 +98,6 @@ public class Inventory {
                 outp.add(allParts.get(i));
             }
         }
-
         return outp;
     }
 
@@ -175,7 +174,7 @@ public class Inventory {
     }
 
     /**
-     * could copy paste some stuff from testerMethod() later.
+     *
      */
     public static void loadSampleData() {
         //add InHouse objects
@@ -197,7 +196,5 @@ public class Inventory {
         addProduct(new Product(genProductID(), "prod3", 2.99, 100, 14, 201));
         addProduct(new Product(genProductID(), "prod4", 2.99, 100, 14, 201));
     }
-
-
 }
 
